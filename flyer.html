@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Padres Conectados - Curso intensivo de 4 horas para guiar y proteger a tus hijos en el mundo digital. Aprende controles parentales, comunicación efectiva y manejo de crisis digitales en Colombia.">
+    <title>Padres Conectados - Curso intensivo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      /* === VARIABLES DE COLOR Y CONFIGURACIÓN GENERAL === */
+      :root {
+        --primary: #136F63; /* Original Teal */
+        --secondary: #EFEFD0; /* Light Cream */
+        --accent: #FF6B35; /* Original Orange */
+        --text-light: #ffffff;
+        --text-dark: #333333;
+        --background: #ffffff;
+        --whatsapp-color: #25D366; /* WhatsApp Green */
+      }
+
+      /* Theme 2: Morado suave + coral */
+      body.theme2 {
+        --primary: #1D3557; /* Dark Blue */
+        --secondary: #A8DADC; /* Light Cyan */
+        --accent: #E6C229; /* Golden Yellow */
+        --text-light: #ffffff;
+      }
+
+      /* Theme 3: Gris cálido + verde */
+      body.theme3 {
+        --primary: #7D1D3F; /* Dark Red/Wine */
+        --secondary: #F2E8CF; /* Light Beige */
+        --accent: #34A0A4; /* Teal Green */
+        --text-light: #ffffff;
+      }
+
+      /* === ESTILOS GENERALES DEL CUERPO === */
+      body {
+        font-family: 'Montserrat', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--background);
+        color: var(--text-dark);
+        max-width: 100%; /* Permite que el cuerpo sea responsive */
+        width: min(210mm, 850px); /* Ancho ajustado para una apariencia más compacta */
+        min-height: 100vh; /* Ajuste para asegurar que ocupe al menos la altura de la vista */
+        margin: 0 auto;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      /* === CONTENEDOR PRINCIPAL DEL FLYER === */
+      .flyer-container {
+        padding: 20px;
+        box-sizing: border-box;
+        position: relative;
+        background-color: var(--background);
+        background-image:
+          radial-gradient(circle at 20% 50%, rgba(19, 111, 99, 0.03) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(255, 107, 53, 0.03) 0%, transparent 50%),
+          radial-gradient(circle at 40% 80%, rgba(239, 239, 208, 0.05) 0%, transparent 50%);
+      }
+
+      /* === ANIMACIONES === */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+      }
+
+      /* === DISTINTIVO DE CURSO NUEVO === */
+      .new-course-badge {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: linear-gradient(45deg, var(--accent), #ff8c5a);
+        color: white;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        z-index: 10;
+        box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+      }
+
+      /* === ENCABEZADO PRINCIPAL === */
+      .header {
+        text-align: center;
+        padding: 15px 0;
+        background: linear-gradient(135deg, var(--primary) 0%, #1a8a7a 100%);
+        color: var(--text-light);
+        border-radius: 8px 8px 0 0;
+        transition: all 0.3s ease;
+        position: relative;
+        box-shadow: 0 6px 20px rgba(19, 111, 99, 0.3);
+      }
+
+      .header-logo {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 32px;
+        color: var(--secondary);
+        filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+      }
+
+      .header h1 {
+        margin: 0;
+        font-size: 48px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        line-height: 1.2;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        color: white; /* Asegura el color blanco para el título principal */
+      }
+
+      .header h2 {
+        margin: 10px 0 0 0;
+        font-size: 18px;
+        font-weight: 400;
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.4;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        color: white; /* Ajuste para visibilidad: texto en blanco */
+      }
+
+      /* === ESTILOS DE LA IMAGEN PRINCIPAL === */
+      .main-image {
+        text-align: center;
+        margin-top: 25px;
+        margin-bottom: 25px;
+      }
+      .main-image img {
+        max-width: 90%; /* Asegura que la imagen se escale */
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        border-radius: 12px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      }
+
+      /* === SECCIÓN DE PRECIO Y LLAMADA A LA ACCIÓN === */
+      .price-cta {
+        background: linear-gradient(45deg, var(--accent) 0%, #ff8c5a 100%);
+        padding: 15px;
+        color: white;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 600;
+        margin: 20px 0; /* Margen para separarlo del contenido adyacente */
+        border-radius: 12px;
+        box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .limited-seats {
+        display: inline-block;
+        background-color: #dc3545;
+        color: white;
+        padding: 4px 12px;
+        border-radius: 15px;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-left: 10px;
+        animation: pulse 2s infinite;
+        box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+      }
+
+      .cta-button {
+          display: inline-block;
+          background-color: var(--primary); /* Usa el color primario para el botón */
+          color: var(--text-light);
+          padding: 12px 25px;
+          border-radius: 8px;
+          text-decoration: none;
+          font-size: 20px;
+          font-weight: 600;
+          margin-top: 15px;
+          transition: background-color 0.3s ease, transform 0.2s ease;
+          box-shadow: 0 4px 15px rgba(19, 111, 99, 0.3);
+          animation: pulse 2s infinite; /* Animación de pulsación para el botón */
+      }
+
+      .cta-button:hover {
+          background-color: #0e5a52; /* Oscurece el primario al pasar el ratón */
+          transform: translateY(-2px);
+      }
+
+
+      /* === CONTENEDOR DE BLOQUES INFORMATIVOS === */
+      .blocks-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        margin: 35px 0;
+      }
+
+      /* === BLOQUES DE INFORMACIÓN === */
+      .block {
+        background-color: var(--secondary);
+        color: #2d2d2d;
+        padding: 20px;
+        border-radius: 16px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(19, 111, 99, 0.1);
+        position: relative;
+        animation: fadeInUp 0.6s ease-out forwards;
+        opacity: 0;
+      }
+
+      .block:nth-child(1) { animation-delay: 0.1s; }
+      .block:nth-child(2) { animation-delay: 0.2s; }
+      .block:nth-child(3) { animation-delay: 0.3s; }
+      .block:nth-child(4) { animation-delay: 0.4s; }
+
+      .block::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        right: -2px;
+        width: 20px;
+        height: 20px;
+        background: var(--accent);
+        clip-path: polygon(100% 0, 0 0, 100% 100%);
+        border-radius: 0 16px 0 0;
+      }
+
+      .block:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        border-color: var(--accent);
+      }
+
+      .block-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .block-icon {
+        font-size: 16px; /* Aún más pequeño para las viñetas */
+        margin-right: 8px;
+        color: var(--primary);
+        background-color: white;
+        width: 32px; /* Aún más pequeño */
+        height: 32px; /* Aún más pequeño */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(19, 111, 99, 0.2);
+      }
+
+      .block-title {
+        font-size: 18px;
+        font-weight: 600;
+        margin: 0;
+        color: #1a4a5a;
+      }
+
+      .block-content {
+        font-size: 13px; /* Fuente más pequeña para el contenido del bloque */
+        line-height: 1.4;
+        color: #2d2d2d;
+        font-weight: 500;
+      }
+      .block-content p strong {
+          font-weight: 600; /* Asegura que el texto en negrita siga siendo resaltado */
+      }
+
+      .color-selector-description {
+        text-align: center;
+        font-size: 12px;
+        color: #666;
+        margin-bottom: 15px;
+        font-style: italic;
+      }
+
+      .color-selector {
+        display: flex;
+        justify-content: center;
+        margin: 10px 0;
+      }
+
+      .color-option {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin: 0 5px;
+        cursor: pointer;
+        border: 2px solid white;
+        transition: all 0.3s ease;
+        position: relative;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      }
+
+      .color-option:hover {
+        transform: scale(1.2);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      }
+
+      .color-option::after {
+        content: attr(title);
+        position: absolute;
+        bottom: -35px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0,0,0,0.8);
+        color: white;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 10px;
+        white-space: nowrap;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+      }
+
+      .color-option:hover::after {
+        opacity: 1;
+      }
+
+      .option1 {
+        background-color: #136F63;
+      }
+
+      .option2 {
+        background-color: #1D3557;
+      }
+
+      .option3 {
+        background-color: #7D1D3F;
+      }
+
+      /* Ajustes del pie de página */
+      .footer {
+        padding-top: 20px;
+        border-top: 1px solid rgba(0,0,0,0.1);
+        margin-top: 30px;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        padding-bottom: 20px;
+      }
+      .footer-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 10px;
+        font-size: 15px; /* Ligeramente más grande para mejor legibilidad */
+        line-height: 1.3;
+      }
+      .footer-item div {
+        font-weight: 500; /* Resaltar texto */
+        color: var(--text-dark); /* Asegurar color de texto */
+      }
+      .footer-icon {
+        font-size: 22px; /* Icono ligeramente más grande */
+        margin-right: 10px;
+        color: var(--primary);
+        flex-shrink: 0;
+      }
+      .footer-item a { /* Estilos para los enlaces en el footer */
+        color: var(--primary); /* Usar color primario para los enlaces */
+        text-decoration: none;
+        transition: color 0.2s ease;
+        font-weight: 600; /* Resaltar enlaces */
+      }
+      .footer-item a:hover {
+        color: var(--accent); /* Cambiar color al pasar el ratón */
+      }
+
+      /* WhatsApp Floating Button */
+      .whatsapp-float-button {
+          position: fixed;
+          bottom: 25px;
+          right: 25px;
+          background-color: var(--whatsapp-color);
+          color: white;
+          width: 55px;
+          height: 55px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 28px;
+          box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+          z-index: 1000;
+          transition: transform 0.3s ease, background-color 0.3s ease;
+          cursor: pointer;
+          text-decoration: none;
+      }
+
+      .whatsapp-float-button:hover {
+          transform: scale(1.1);
+          background-color: #1DA851; /* Un verde ligeramente más oscuro al pasar el ratón */
+      }
+
+      @media print {
+        .color-selector, .whatsapp-float-button {
+          display: none;
+        }
+
+        body {
+          width: 210mm;
+          min-height: 297mm;
+          margin: 0;
+          box-shadow: none;
+        }
+
+        .flyer-container {
+          min-height: 297mm;
+          padding: 15mm;
+        }
+
+        * {
+          transition: none !important;
+          box-shadow: none !important;
+        }
+      }
+
+      /* Ajustes responsivos */
+      @media (max-width: 768px) {
+        .header h1 {
+          font-size: 38px;
+        }
+        .header h2 {
+          font-size: 16px;
+        }
+        .blocks-container {
+          grid-template-columns: 1fr; /* Apila los bloques en pantallas más pequeñas */
+          gap: 20px;
+        }
+        .price-cta {
+            font-size: 20px;
+            padding: 12px;
+        }
+        .cta-button {
+            font-size: 18px;
+            padding: 10px 20px;
+        }
+        .footer-grid {
+            grid-template-columns: 1fr; /* Apila los elementos del pie de página en pantallas muy pequeñas */
+            text-align: center;
+        }
+        .footer-item {
+            justify-content: center; /* Centra los elementos del pie de página */
+        }
+        .footer-icon {
+            margin-right: 5px;
+        }
+        .whatsapp-float-button {
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            bottom: 20px;
+            right: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body class="theme2">
+    <!-- === SELECTOR DE COLORES === -->
+    <!-- Botones de selección de color -->
+    <div class="color-selector-description">
+      Selecciona tu paleta de colores favorita
+    </div>
+    <div class="color-selector" role="toolbar" aria-label="Selector de paleta de colores">
+      <div class="color-option option1" onclick="document.body.className=''" title="Verde azulado" aria-label="Seleccionar tema verde azulado" tabindex="0"></div>
+      <div class="color-option option2" onclick="document.body.className='theme2'" title="Azul profundo" aria-label="Seleccionar tema azul profundo" tabindex="0"></div>
+      <div class="color-option option3" onclick="document.body.className='theme3'" title="Rojo vino" aria-label="Seleccionar tema rojo vino" tabindex="0"></div>
+    </div>
+
+    <!-- === CONTENIDO PRINCIPAL DEL FLYER === -->
+    <div class="flyer-container" role="main" aria-label="Flyer del curso Padres Conectados">
+      <div class="new-course-badge">Nuevo Curso</div>
+
+      <!-- === ENCABEZADO CON TÍTULO Y DESCRIPCIÓN === -->
+      <header class="header" role="banner">
+        <div class="header-logo">
+          <i class="bi bi-shield-check-fill"></i>
+        </div>
+        <h1>Padres Conectados</h1>
+        <h2>Aprende a implementar protección digital efectiva, comunicación asertiva y protocolos de respuesta ante crisis tecnológicas</h2>
+      </header>
+
+      <!-- === IMAGEN PRINCIPAL === -->
+      <div class="main-image">
+        <img src="https://www.commonsensemedia.org/sites/default/files/styles/ratio_16_9_large/public/blog/2020-covid19-latino-blog.jpg" alt="Familia latinoamericana usando tecnología durante la pandemia">
+      </div>
+
+      <div class="section-divider"></div>
+
+      <!-- === BLOQUES DE INFORMACIÓN DEL CURSO === -->
+      <div class="blocks-container" role="region" aria-label="Contenido del curso">
+        <!-- === BLOQUE 1: UNIVERSO DIGITAL === -->
+        <div class="block">
+          <div class="block-header">
+            <div class="block-icon">
+              <i class="bi bi-globe2"></i>
+            </div>
+            <h3 class="block-title">Universo digital</h3>
+          </div>
+          <div class="block-content">
+            <p>
+              <strong>Comprende el entorno digital en el que se mueven tus hijos.</strong>
+              Explora cómo usan internet niños y adolescentes en Colombia, qué plataformas prefieren y cuáles son los principales riesgos a los que están expuestos. Aprende a identificar el origen de sus conductas para  acompañarlos con criterio
+            </p>
+          </div>
+        </div>
+
+        <!-- === BLOQUE 2: ESCUDO DIGITAL === -->
+        <div class="block">
+          <div class="block-header">
+            <div class="block-icon">
+              <i class="bi bi-shield-check"></i>
+            </div>
+            <h3 class="block-title">Escudo digital</h3>
+          </div>
+          <div class="block-content">
+            <p>
+              <strong>Aprende a proteger a tu familia en el mundo digital.</strong>
+              Conoce herramientas de control parental disponibles en celulares, computadores y redes domésticas. Establece límites saludables, filtros de contenido y monitoreo sin invadir su privacidad.
+            </p>
+          </div>
+        </div>
+
+        <!-- === BLOQUE 3: COMUNICACIÓN === -->
+        <div class="block">
+          <div class="block-header">
+            <div class="block-icon">
+              <i class="bi bi-chat-dots"></i>
+            </div>
+            <h3 class="block-title">Comunicación</h3>
+          </div>
+          <div class="block-content">
+            <p>
+              <strong>Fortalece el diálogo en casa frente a la tecnología.</strong>
+              Aprende estrategias prácticas para hablar con tus hijos sobre lo que hacen en línea, establecer acuerdos familiares claros y fomentar la autorregulación digital desde la confianza, no desde el miedo.
+            </p>
+          </div>
+        </div>
+
+        <!-- === BLOQUE 4: CRISIS Y RESPUESTA === -->
+        <div class="block">
+          <div class="block-header">
+            <div class="block-icon">
+              <i class="bi bi-exclamation-triangle"></i>
+            </div>
+            <h3 class="block-title">Crisis y respuesta</h3>
+          </div>
+          <div class="block-content">
+            <p>
+              <strong>Sabrás cómo actuar si algo grave sucede en internet.</strong>
+              Identifica señales de alarma en el comportamiento digital, conoce rutas de atención en Colombia, aprende a preservar evidencias y accede a recursos de apoyo psicológico y legal en caso de emergencia.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <!-- === SECCIÓN DE PRECIO Y INSCRIPCIÓN === -->
+      <div class="price-cta" id="pricing-info">
+        $130.000 COP por hogar
+        <span class="limited-seats">Cupos limitados</span>
+        <br>
+        <a href="https://forms.gle/RxWC7uQrrBaHRgTr6" class="cta-button" aria-describedby="pricing-info" target="_blank">Inscríbete ahora</a>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <!-- === PIE DE PÁGINA CON INFORMACIÓN DE CONTACTO === -->
+      <footer class="footer" role="contentinfo">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-item">
+              <div class="footer-icon"><i class="bi bi-calendar-event"></i></div>
+              <div>Fecha y hora: Se definirá por votación en el formulario de inscripción.</div>
+            </div>
+            <div class="footer-item">
+              <div class="footer-icon"><i class="bi bi-clock"></i></div>
+              <div>Duración: 4 horas</div>
+            </div>
+            <div class="footer-item">
+              <div class="footer-icon"><i class="bi bi-laptop"></i></div>
+              <div>Modalidad: Virtual</div>
+            </div>
+            <div class="footer-item">
+              <div class="footer-icon"><i class="bi bi-file-earmark-pdf"></i></div>
+              <div>Incluye: Guía completa</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="footer-item">
+              <div class="footer-icon"><i class="bi bi-envelope"></i></div>
+              <div>Email: <a href="mailto:info@mindtechconsulting.com">info@mindtechconsulting.com</a></div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/573104754963" class="whatsapp-float-button" target="_blank" rel="noopener noreferrer" aria-label="Enviar mensaje por WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <script>
+      // === SCRIPT PARA CAMBIO DE TEMAS DE COLOR ===
+      // Función para cambiar entre las tres variaciones de color disponibles
+      // Establecer tema2 como predeterminado al cargar la página
+      document.body.classList.add('theme2');
+
+      document.querySelectorAll('.color-option').forEach((option) => {
+        option.addEventListener('click', function () {
+          document.body.className = '';
+          if (this.classList.contains('option2')) {
+            document.body.classList.add('theme2');
+          } else if (this.classList.contains('option3')) {
+            document.body.classList.add('theme3');
+          }
+        });
+
+        // Añadir soporte para navegación por teclado
+        option.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            this.click();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
