@@ -21,7 +21,7 @@
             --cubicle-diver-bg: #e0f7fa; /* Light Cyan */
             --cubicle-adicc-bg: #ffe0b2; /* Light Orange */
             --cubicle-perse-bg: #e8f5e9; /* Light Green */
-            --conferencista-bg: #d1ecf1; /* Light Blue Grey */
+            --conferencista-bg: #d1ecf1; /* Light Blue Grey for base, overridden by cubicle-specific */
             --group-A-color: #28a745;
             --group-B-color: #007bff;
             --group-C-color: #fd7e14;
@@ -162,7 +162,7 @@
             border-radius: 8px;
         }
         .activity-box {
-            background-color: var(--cubicle-diver-bg); /* Default, will be overridden by specific PAQ type */
+            background-color: var(--cubicle-diver-bg); /* Default, will be overridden by specific type */
             border-left: 5px solid var(--secondary-color);
             padding: 20px;
             margin-top: 20px;
@@ -221,10 +221,20 @@
         .group-B { color: var(--group-B-color); font-weight: bold; } /* Blue */
         .group-C { color: var(--group-C-color); font-weight: bold; } /* Orange */
 
-        .cubicle-Diver { background-color: var(--cubicle-diver-bg); } /* Light Cyan */
-        .cubicle-Adicc { background-color: var(--cubicle-adicc-bg); } /* Light Orange */
-        .cubicle-Perse { background-color: var(--cubicle-perse-bg); } /* Light Green */
-        .conferencista-cubicle { background-color: var(--conferencista-bg); font-weight: bold; } /* Light Blue Grey */
+        /* Specific styling for Phase 1 & 2 blocks */
+        .phase-block {
+            background-color: #f0f8ff; /* Light blue for phase differentiation */
+            border: 1px solid #cceeff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .phase-block h3 {
+            border-left-color: var(--secondary-color);
+            color: var(--secondary-color);
+        }
+        .phase-block.phase1 { background-color: #e0f7fa; border-color: #a7d9e2; }
+        .phase-block.phase2 { background-color: #ffe0b2; border-color: #ffc97c; }
 
         .time-breakdown {
             display: flex;
@@ -388,9 +398,10 @@
             .group-legend span { margin: 5px 0; display: block; }
         }
 
-        /* Group path highlighting styles */
-        .path-highlight {
+        /* Group path highlighting styles for Phase 2 table */
+        .phase2-table td.highlighted {
             background-color: rgba(var(--highlight-rgb, 0, 0, 0), 0.2) !important;
+            font-weight: bold;
         }
 
     </style>
@@ -401,31 +412,28 @@
 
     <div class="section-box">
         <h2><span class="emoji">📝</span> 1. Resumen Ejecutivo: ¿Qué haremos y por qué?</h2>
-        <p>Esta guía detalla el plan óptimo para un evento de 2 horas con tres grupos de niños, asegurando que todos reciban las 3 microcharlas principales ("Diversión", "Adicción", "Persecución") impartidas por un único conferencista, con actividades variadas y con propósito en cada rotación, <strong>explicadas y dirigidas por los facilitadores</strong>. Nuestro objetivo es una experiencia fluida y enriquecedora para todos. ✨</p>
+        <p>Esta guía detalla el plan óptimo para un evento de 2 horas con tres grupos de niños, asegurando que todos reciban las 3 microcharlas principales ("Diversión", "Adicción", "Persecución") impartidas por un único conferencista, seguidas de actividades variadas y con propósito en cada rotación, <strong>explicadas y dirigidas por los facilitadores</strong>. Nuestro objetivo es una experiencia fluida y enriquecedora para todos. ✨</p>
 
         <div class="highlight-box">
-            <span class="emoji">⏰</span> <strong>Formato Clave: Bloques de 12 minutos</strong>
-            <p style="margin-top: 10px; margin-bottom: 0;">Cada segmento de 12 minutos se distribuye así:</p>
-            <div class="time-breakdown">
-                <div class="time-segment charla-segment">7' Charla (Conferencista)</div>
-                <div class="time-segment actividad-segment">4' Actividad (Facilitador)</div>
-                <div class="time-segment transicion-segment">1' Transición</div>
-            </div>
+            <span class="emoji">⏰</span> <strong>Estructura en 2 Fases Claras:</strong>
+            <p style="margin-top: 10px; margin-bottom: 0;">Para lograr un flujo intuitivo y sin confusiones, el evento se divide en dos fases principales, cada una de 1 hora:</p>
+            <ul>
+                <li>Fase 1 (60 min): Conferencias Unificadas. Tú, el conferencista, darás las 3 charlas una tras otra a todos los grupos juntos.</li>
+                <li>Fase 2 (60 min): Módulos de Actividad Rotatorios. Los grupos se dividen y rotan por los 3 cubículos (Diver, Adicc, Perse) para realizar actividades prácticas.</li>
+            </ul>
         </div>
 
         <p class="info">
-            <span class="emoji">🔄</span> <strong>Rotación Fija:</strong> Los grupos siempre rotarán en sentido horario:
+            <span class="emoji">🔄</span> <strong>Progresión Simple y Eficaz:</strong>
         </p>
         <div class="flow-diagram">
-            <div class="flow-box">Diver (Diversión) 🎉</div>
+            <div class="flow-box">Fase 1: Conferencias (TODOS JUNTOS) 🗣️</div>
             <span class="flow-arrow">➔</span>
-            <div class="flow-box">Adicc (Adicción) 🧠</div>
+            <div class="flow-box">Transición de Espacio 🏗️</div>
             <span class="flow-arrow">➔</span>
-            <div class="flow-box">Perse (Persecución) 🛡️</div>
-            <span class="flow-arrow">➔</span>
-            <div class="flow-box">Diver (Inicio) 🎉</div>
+            <div class="flow-box">Fase 2: Actividades (GRUPOS ROTAN) 🤸</div>
         </div>
-        <p style="text-align: center; margin-top: 10px;">Al sonar la trompeta 🎺, todos los grupos avanzan una estación. ¡Mantén la energía!</p>
+        <p style="text-align: center; margin-top: 10px;">Esta división simplifica el manejo y garantiza que todos reciban la información y la práctica. ¡A maximizar el impacto!</p>
     </div>
 
     <div class="section-box">
@@ -433,16 +441,16 @@
         <div class="role-box">
             <h3><span class="emoji">🎤</span> Conferencista (1 Persona)</h3>
             <ul>
-                <li>Imparte 3 rondas de charlas (primero todos en "Diver", luego en "Adicc", luego en "Perse").</li>
-                <li>En cada bloque: <strong>7 minutos de charla central</strong>.</li>
-                <li>Introduce brevemente la micro-actividad (15-30 segundos) y <strong>pasa el turno al facilitador del cubículo para que la explique y dirija</strong>.</li>
+                <li>En Fase 1: Imparte las 3 conferencias (Diversión, Adicción, Persecución) una tras otra a todos los grupos juntos.</li>
+                <li>Duración por charla: 18 minutos cada una.</li>
+                <li>En Fase 2: Su rol principal ha concluido, puede apoyar en la supervisión general o en el cierre del evento.</li>
             </ul>
         </div>
         <div class="role-box">
             <h3><span class="emoji">👨‍🏫</span> Facilitadores de Estación (3 Personas: Uno por Cubículo Diver, Adicc, Perse)</h3>
             <ul>
-                <li>Reciben a cada grupo que llega a su cubículo, apoyan el orden, y son los encargados de <strong>explicar y dirigir</strong> la micro-actividad de 4 minutos.</li>
-                <li>Deben ejecutar la actividad correspondiente al "Paquete" del bloque (PAQ-1 para bloques 1-3, PAQ-2 para 4-6, PAQ-3 para 7-9).</li>
+                <li>En Fase 1: Apoyan en la logística general, transición de "paredes" entre conferencias, y gestión del público.</li>
+                <li>En Fase 2: Son los encargados de explicar y dirigir la micro-actividad de 15 minutos en su respectivo cubículo.</li>
                 <li>Realizan un cierre exprés (20-30 segundos) con una pregunta de reflexión y un aplauso.</li>
                 <li>Controlan los materiales y el tiempo local de su actividad.</li>
             </ul>
@@ -450,11 +458,22 @@
         <div class="role-box">
             <h3><span class="emoji">⏱️</span> Timekeeper (1 Persona)</h3>
             <ul>
-                <li>Usa un cronómetro con 3 señales claras por cada bloque de 12 minutos:
+                <li>Usa un cronómetro con señales claras para ambas fases:
                     <ul>
-                        <li><strong>Minuto 7:00:</strong> <span class="info">🔔 Campanita</span> ("Cierra charla", conferencista introduce actividad).</li>
-                        <li><strong>Minuto 11:00:</strong> <span class="warning">🗣️ Aviso sonoro</span> ("Transición: queda 1 minuto").</li>
-                        <li><strong>Minuto 12:00:</strong> <span class="info">🎺 Trompeta</span> (¡Tiempo de rotar Diver<span class="rotation-arrow">➔</span>Adicc<span class="rotation-arrow">➔</span>Perse!).</li>
+                        <li>Fase 1 (Conferencias):
+                            <ul>
+                                <li>Minuto 15:00 de charla: <span class="info">🔔 Campanita</span> (Aviso al conferencista: "quedan 3 minutos").</li>
+                                <li>Minuto 18:00 de charla: <span class="info">🎺 Trompeta</span> (Fin de conferencia, inicio de transición).</li>
+                                <li>Minuto 3:00 de transición: <span class="warning">🗣️ Aviso sonoro</span> (Fin de transición, inicio de siguiente conferencia).</li>
+                            </ul>
+                        </li>
+                        <li>Fase 2 (Actividades):
+                            <ul>
+                                <li>Minuto 13:00 de actividad: <span class="info">🔔 Campanita</span> (Aviso al facilitador: "quedan 2 minutos, preparar cierre").</li>
+                                <li>Minuto 15:00 de actividad: <span class="info">🎺 Trompeta</span> (Fin de actividad, inicio de transición).</li>
+                                <li>Minuto 5:00 de transición: <span class="warning">🗣️ Aviso sonoro</span> (Fin de transición, inicio de siguiente actividad).</li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
             </ul>
@@ -462,331 +481,276 @@
         <div class="role-box">
             <h3><span class="emoji">🏃</span> Runner (1 Persona)</h3>
             <ul>
-                <li>Encargado de suministros, agua, resolución de emergencias menores y apoyo logístico a los facilitadores.</li>
+                <li>Encargado de suministros, agua, resolución de emergencias menores y apoyo logístico a los facilitadores y al conferencista en ambas fases.</li>
             </ul>
         </div>
         <div class="role-box">
             <h3><span class="emoji">🎯</span> Coordinación General (1 Persona)</h3>
             <ul>
-                <li>Supervisa el cumplimiento del flujo, asegura el silencio en los pasillos, visibilidad de las señales y que las entradas/salidas estén despejadas.</li>
+                <li>Supervisa el cumplimiento del flujo en ambas fases, asegura el silencio en los pasillos, visibilidad de las señales y que las entradas/salidas estén despejadas.</li>
+                <li>Gestiona la transición de mobiliario y señalética entre la Fase 1 y la Fase 2.</li>
             </ul>
         </div>
     </div>
 
     <div class="section-box">
-        <h2><span class="emoji">🗓️</span> 3. Cronograma Total del Evento (2:00 horas exactas)</h2>
-        <p>El evento se dividirá en una bienvenida, 9 bloques de actividad y un cierre. ¡Cada minuto cuenta! ⏳</p>
+        <h2><span class="emoji">🗓️</span> 3. Cronograma Detallado del Evento (2:00 horas exactas)</h2>
+        <p>Este es el desglose minuto a minuto para un evento fluido y dinámico.</p>
         <ul>
-            <li><strong>0:00 – 0:04 (4 minutos):</strong> Bienvenida, explicación de reglas y rutas. 👋</li>
-            <li><strong>0:04 – 1:52 (108 minutos):</strong> 9 bloques de 12 minutos cada uno (actividades y charlas). 🔄</li>
-            <li><strong>1:52 – 2:00 (8 minutos):</strong> Cierre, compromisos, recordatorios y foto grupal. 📸</li>
-        </ul>
-    </div>
-
-    <div class="section-box">
-        <h2><span class="emoji">🗺️</span> 4. Mapa de Rotación (Sentido de Reloj Diver<span class="rotation-arrow">➔</span>Adicc<span class="rotation-arrow">➔</span>Perse)</h2>
-        <p>Este es el itinerario detallado minuto a minuto. El conferencista se moverá entre cubículos a lo largo de las rondas para dar las charlas.</p>
-        <p class="info"><span class="emoji">🧑‍🤝‍🧑</span> <strong>Grupos:</strong></p>
-        <ul>
-            <li><strong class="group-A" data-group="A">Grupo A:</strong> 7–10 años 🍏</li>
-            <li><strong class="group-B" data-group="B">Grupo B:</strong> 10–13 años 📘</li>
-            <li><strong class="group-C" data-group="C">Grupo C:</strong> 14–18 años 🧡</li>
-        </ul>
-        <p class="info"><span class="emoji">📍</span> <strong>Cubículos/Temas:</strong></p>
-        <ul>
-            <li><strong>Diver:</strong> Diversión 🎉</li>
-            <li><strong>Adicc:</strong> Adicción 🧠</li>
-            <li><strong>Perse:</strong> Persecución 🛡️</li>
+            <li>0:00 – 0:04 (4 minutos): Bienvenida, explicación de reglas generales. 👋</li>
+            <li>0:04 – 1:52 (108 minutos): Fases de Conferencias y Actividades. 🔄</li>
+            <li>1:52 – 2:00 (8 minutos): Cierre, compromisos, recordatorios y foto grupal. 📸</li>
         </ul>
 
-        <div class="rotation-visual">
-            <div class="rotation-circle">
-                <span class="cubicle-label diver">Diver 🎉</span>
-                <span class="cubicle-label adicc">Adicc 🧠</span>
-                <span class="cubicle-label perse">Perse 🛡️</span>
-                Rotación Horaria
-                <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3em; color: var(--accent-color);">↻</span>
-            </div>
-            <div class="group-legend">
-                <span class="group-A">Grupo A: <span class="group-A">🍏</span></span>
-                <span class="group-B">Grupo B: <span class="group-B">📘</span></span>
-                <span class="group-C">Grupo C: <span class="group-C">🧡</span></span>
-            </div>
+        <div class="phase-block phase1">
+            <h3><span class="emoji">🗣️</span> Fase 1: Conferencias Unificadas (60 minutos)</h3>
+            <p>Todos los grupos juntos escuchan las 3 conferencias, una tras otra.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tiempo (min.)</th>
+                        <th>Duración</th>
+                        <th>Actividad Principal</th>
+                        <th>Notas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>0:04 – 0:22</td><td>18 min</td><td>Conferencia: Diversión 🎉</td><td>Conferencista da charla a todos los grupos (A, B, C)</td></tr>
+                    <tr><td>0:22 – 0:25</td><td>3 min</td><td>Transición de Tema/Pared 🖼️</td><td>Preparación visual para siguiente conferencia.</td></tr>
+                    <tr><td>0:25 – 0:43</td><td>18 min</td><td>Conferencia: Adicción 🧠</td><td>Conferencista da charla a todos los grupos (A, B, C)</td></tr>
+                    <tr><td>0:43 – 0:46</td><td>3 min</td><td>Transición de Tema/Pared 🖼️</td><td>Preparación visual para siguiente conferencia.</td></tr>
+                    <tr><td>0:46 – 1:04</td><td>18 min</td><td>Conferencia: Persecución 🛡️</td><td>Conferencista da charla a todos los grupos (A, B, C)</td></tr>
+                    <tr><td>1:04 – 1:12</td><td>8 min</td><td>Transición de Fase (Montaje de Módulos) 🏗️</td><td>El equipo arma los 3 cubículos de actividad. Los grupos pueden estirar/beber agua.</td></tr>
+                </tbody>
+            </table>
         </div>
 
+        <div class="phase-block phase2">
+            <h3><span class="emoji">🤸</span> Fase 2: Módulos de Actividad Rotatorios (60 minutos)</h3>
+            <p>Los grupos se dividen y rotan por los cubículos. Cada grupo visitará cada cubículo una vez.</p>
+            <div class="rotation-visual">
+                <div class="rotation-circle">
+                    <span class="cubicle-label diver">Diver 🎉</span>
+                    <span class="cubicle-label adicc">Adicc 🧠</span>
+                    <span class="cubicle-label perse">Perse 🛡️</span>
+                    Rotación Horaria de Grupos
+                    <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3em; color: var(--accent-color);">↻</span>
+                </div>
+                <div class="group-legend">
+                    <span class="group-A">Grupo A: <span class="group-A">🍏</span></span>
+                    <span class="group-B">Grupo B: <span class="group-B">📘</span></span>
+                    <span class="group-C">Grupo C: <span class="group-C">🧡</span></span>
+                </div>
+            </div>
 
-        <h3>Línea de Tiempo Detallada (Minuto Exacto por Bloque)</h3>
-        <table id="itinerary-table">
-            <thead>
-                <tr>
-                    <th>Bloque</th>
-                    <th>Tiempo (min.)</th>
-                    <th>Conferencista en…</th>
-                    <th>Grupo A (7–10) <span class="group-A">🍏</span></th>
-                    <th>Grupo B (10–13) <span class="group-B">📘</span></th>
-                    <th>Grupo C (14–18) <span class="group-C">🧡</span></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>Bienvenida</td><td>0:00–0:04</td><td>—</td><td>Orientación</td><td>Orientación</td><td>Orientación</td></tr>
-                <tr data-block="1"><td>1</td><td>0:04–0:16</td><td class="conferencista-cubicle">Diver 🎉</td><td class="cubicle-Diver" data-group-loc="A"><strong>Diver</strong></td><td data-group-loc="B">Adicc</td><td data-group-loc="C">Perse</td></tr>
-                <tr data-block="2"><td>2</td><td>0:16–0:28</td><td class="conferencista-cubicle">Diver 🎉</td><td data-group-loc="A">Adicc</td><td class="cubicle-Diver" data-group-loc="B"><strong>Diver</strong></td><td data-group-loc="C">Perse</td></tr>
-                <tr data-block="3"><td>3</td><td>0:28–0:40</td><td class="conferencista-cubicle">Diver 🎉</td><td data-group-loc="A">Perse</td><td data-group-loc="B">Adicc</td><td class="cubicle-Diver" data-group-loc="C"><strong>Diver</strong></td></tr>
-                <tr data-block="4"><td>4</td><td>0:40–0:52</td><td class="conferencista-cubicle">Adicc 🧠</td><td class="cubicle-Adicc" data-group-loc="A"><strong>Adicc</strong></td><td data-group-loc="B">Perse</td><td data-group-loc="C">Diver</td></tr>
-                <tr data-block="5"><td>5</td><td>0:52–1:04</td><td class="conferencista-cubicle">Adicc 🧠</td><td data-group-loc="A">Perse</td><td class="cubicle-Adicc" data-group-loc="B"><strong>Adicc</strong></td><td data-group-loc="C">Diver</td></tr>
-                <tr data-block="6"><td>6</td><td>1:04–1:16</td><td class="conferencista-cubicle">Adicc 🧠</td><td data-group-loc="A">Diver</td><td data-group-loc="B">Perse</td><td class="cubicle-Adicc" data-group-loc="C"><strong>Adicc</strong></td></tr>
-                <tr data-block="7"><td>7</td><td>1:16–1:28</td><td class="conferencista-cubicle">Perse 🛡️</td><td class="cubicle-Perse" data-group-loc="A"><strong>Perse</strong></td><td data-group-loc="B">Diver</td><td data-group-loc="C">Adicc</td></tr>
-                <tr data-block="8"><td>8</td><td>1:28–1:40</td><td class="conferencista-cubicle">Perse 🛡️</td><td data-group-loc="A">Diver</td><td class="cubicle-Perse" data-group-loc="B"><strong>Perse</strong></td><td data-group-loc="C">Adicc</td></tr>
-                <tr data-block="9"><td>9</td><td>1:40–1:52</td><td class="conferencista-cubicle">Perse 🛡️</td><td data-group-loc="A">Adicc</td><td data-group-loc="B">Diver</td><td class="cubicle-Perse" data-group-loc="C"><strong>Perse</strong></td></tr>
-                <tr><td>Cierre</td><td>1:52–2:00</td><td>—</td><td>Compromisos</td><td>Compromisos</td><td>Compromisos</td></tr>
-            </tbody>
-        </table>
-        <p class="info" style="text-align: center;"><strong>Regla Universal:</strong> Al sonar la trompeta 🎺 (al minuto 12:00 de cada bloque), todos los grupos avanzan una estación en sentido horario. ¡Fluidez total! 🌊</p>
+            <table id="phase2-table" class="phase2-table">
+                <thead>
+                    <tr>
+                        <th>Bloque</th>
+                        <th>Tiempo (min.)</th>
+                        <th>Grupo A (7–10) <span class="group-A">🍏</span></th>
+                        <th>Grupo B (10–13) <span class="group-B">📘</span></th>
+                        <th>Grupo C (14–18) <span class="group-C">🧡</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-block="1">
+                        <td>1</td>
+                        <td>1:12 – 1:32</td>
+                        <td data-group-loc="A" data-cubicle="Diver">Diver (Act. Práctica)</td>
+                        <td data-group-loc="B" data-cubicle="Adicc">Adicc (Act. Práctica)</td>
+                        <td data-group-loc="C" data-cubicle="Perse">Perse (Act. Práctica)</td>
+                    </tr>
+                    <tr data-block="2">
+                        <td>2</td>
+                        <td>1:32 – 1:52</td>
+                        <td data-group-loc="A" data-cubicle="Adicc">Adicc (Act. Práctica)</td>
+                        <td data-group-loc="B" data-cubicle="Perse">Perse (Act. Práctica)</td>
+                        <td data-group-loc="C" data-cubicle="Diver">Diver (Act. Práctica)</td>
+                    </tr>
+                    <tr data-block="3">
+                        <td>3</td>
+                        <td>1:52 – 2:12</td>
+                        <td data-group-loc="A" data-cubicle="Perse">Perse (Act. Práctica)</td>
+                        <td data-group-loc="B" data-cubicle="Diver">Diver (Act. Práctica)</td>
+                        <td data-group-loc="C" data-cubicle="Adicc">Adicc (Act. Práctica)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="info" style="text-align: center;"><strong>Importante:</strong> En esta fase, los grupos rotan en sentido horario: Diver <span class="rotation-arrow">➔</span> Adicc <span class="rotation-arrow">➔</span> Perse <span class="rotation-arrow">➔</span> Diver. Cada bloque incluye 15 minutos de actividad + 5 minutos de transición.</p>
 
-        <h3>Itinerario por Grupo (Para pegar en la pared de cada estación)</h3>
-        <p class="tip"><span class="emoji">🍏</span> <strong class="group-A" data-group-id="A">Grupo A (7–10 años):</strong> Diver(1) <span class="rotation-arrow">➔</span> Adicc(2) <span class="rotation-arrow">➔</span> Perse(3) <span class="rotation-arrow">➔</span> Adicc(4) <span class="rotation-arrow">➔</span> Perse(5) <span class="rotation-arrow">➔</span> Diver(6) <span class="rotation-arrow">➔</span> Perse(7) <span class="rotation-arrow">➔</span> Diver(8) <span class="rotation-arrow">➔</span> Adicc(9)</p>
-        <p class="tip"><span class="emoji">📘</span> <strong class="group-B" data-group-id="B">Grupo B (10–13 años):</strong> Adicc(1) <span class="rotation-arrow">➔</span> Diver(2) <span class="rotation-arrow">➔</span> Adicc(3) <span class="rotation-arrow">➔</span> Perse(4) <span class="rotation-arrow">➔</span> Adicc(5) <span class="rotation-arrow">➔</span> Perse(6) <span class="rotation-arrow">➔</span> Diver(7) <span class="rotation-arrow">➔</span> Perse(8) <span class="rotation-arrow">➔</span> Diver(9)</p>
-        <p class="tip"><span class="emoji">🧡</span> <strong class="group-C" data-group-id="C">Grupo C (14–18 años):</strong> Perse(1) <span class="rotation-arrow">➔</span> Perse(2) <span class="rotation-arrow">➔</span> Diver(3) <span class="rotation-arrow">➔</span> Diver(4) <span class="rotation-arrow">➔</span> Diver(5) <span class="rotation-arrow">➔</span> Adicc(6) <span class="rotation-arrow">➔</span> Adicc(7) <span class="rotation-arrow">➔</span> Adicc(8) <span class="rotation-arrow">➔</span> Perse(9)</p>
-        <p class="tip"><span class="emoji">💡</span> <em>(Los paréntesis indican el número de bloque en el cronograma general. ¡Así nunca se pierden!)</em></p>
+            <h3>Itinerario por Grupo (Fase 2 - Para pegar en cada cubículo)</h3>
+            <p class="tip"><span class="emoji">🍏</span> <strong class="group-A" data-group-id="A">Grupo A (7–10 años):</strong> Diver(B1) <span class="rotation-arrow">➔</span> Adicc(B2) <span class="rotation-arrow">➔</span> Perse(B3)</p>
+            <p class="tip"><span class="emoji">📘</span> <strong class="group-B" data-group-id="B">Grupo B (10–13 años):</strong> Adicc(B1) <span class="rotation-arrow">➔</span> Perse(B2) <span class="rotation-arrow">➔</span> Diver(B3)</p>
+            <p class="tip"><span class="emoji">🧡</span> <strong class="group-C" data-group-id="C">Grupo C (14–18 años):</strong> Perse(B1) <span class="rotation-arrow">➔</span> Diver(B2) <span class="rotation-arrow">➔</span> Adicc(B3)</p>
+            <p class="tip"><span class="emoji">💡</span> <em>(Los paréntesis indican el número de bloque de la Fase 2. ¡Un recorrido claro y completo para cada grupo!)</em></p>
+        </div>
     </div>
 
     <div class="section-box">
-        <h2><span class="emoji">🗣️</span> 5. Guion del Conferencista (7 minutos por Charla)</h2>
-        <p>Estructura recomendada para mantener el tiempo y la efectividad. ¡Sé conciso y claro!</p>
-        <h4><span class="emoji">⏱️</span> Estructura 2–3–2 (minutos aproximados)</h4>
-        <ol>
-            <li>
-                <strong>Inicio (2 minutos): ✨ Conexión y Objetivo</strong>
-                <ul>
-                    <li>Conexión rápida con el grupo (pregunta abierta o mini dinámica corporal de 15 segundos).</li>
-                    <li>Establecer el objetivo claro de la charla (una frase potente).</li>
-                    <li>"Hoy veremos X, luego haremos una mini-actividad y rotamos con la trompeta."</li>
-                </ul>
-            </li>
-            <li>
-                <strong>Desarrollo (3 minutos): 🧠 Ideas Clave y Ejemplo</strong>
-                <ul>
-                    <li>Presentar 2-3 ideas clave (en frases cortas y concisas).</li>
-                    <li>Utilizar 1 ejemplo o mini-historia aplicable a la edad del grupo (ajustar tono).</li>
-                    <li>Realizar 1 pregunta reflexiva (ej. "manos arriba/abajo" para interactuar).</li>
-                </ul>
-            </li>
-            <li>
-                <strong>Cierre e Introducción a la Actividad (2 minutos): 🤝 Paso al Facilitador</strong>
-                <ul>
-                    <li>Recapitulación en 1 frase.</li>
-                    <li>"Ahora, el facilitador <span class="info">[Nombre del Facilitador]</span> les explicará y guiará en la micro-actividad de <span class="info">[nombre de la actividad]</span> en este cubículo <span class="info">[Diver/Adicc/Perse]</span>. ¡Tienen 4 minutos! Cuando escuchen la campanita 🔔 quedará 1 minuto para la transición."</li>
-                    <li>Dar una señal visual al facilitador (ej. pulgar arriba 👍) y nombrarlo: "Con <span class="info">[Nombre del Facilitador]</span>".</li>
-                </ul>
-            </li>
-        </ol>
-    </div>
+        <h2><span class="emoji">💡</span> 5. Actividades Prácticas (15 minutos) y Cierres (20–30 segundos) - Fase 2</h2>
+        <p class="warning"><span class="emoji">⚠️</span> <strong>¡ATENCIÓN FACILITADORES!</strong> Las actividades aquí descritas son **propuestas**. Cada cubículo tendrá un set diseñado para las tres edades, y el facilitador debe adaptar o seleccionar la actividad más adecuada según el grupo que llega.</p>
+        <p style="margin-top: -10px;">¡Cada grupo experimentará una actividad diferente por cubículo! ✅ Para ver los detalles de cada PAQ de actividades, haz clic en el título.</p>
+        <p class="tip"><span class="emoji">🎯</span> <em>Cada set de actividades prácticas (para Diver, Adicc, Perse) contendrá opciones específicas para 7-10, 10-13 y 14-18 años.</em></p>
 
-    <div class="section-box">
-        <h2><span class="emoji">💡</span> 6. Micro-Actividades Exprés (4 minutos) y Cierres (20–30 segundos)</h2>
-        <p class="warning"><span class="emoji">⚠️</span> <strong>¡ATENCIÓN FACILITADORES!</strong> Hay 3 paquetes (PAQ-1, PAQ-2, PAQ-3) por cubículo para asegurar la variedad de actividades. Deben estar atentos a qué PAQUETE aplicar según el bloque.</p>
-        <p style="margin-top: -10px;">¡Así ningún grupo repite actividad! ✅ Para ver los detalles de cada PAQ, haz clic en el título.</p>
-        <ul>
-            <li><strong>Bloques 1–3:</strong> Usar <strong class="info">PAQ-1</strong> (Primer recorrido por el tema)</li>
-            <li><strong>Bloques 4–6:</strong> Usar <strong class="info">PAQ-2</strong> (Segundo encuentro con el tema, actividad diferente)</li>
-            <li><strong>Bloques 7–9:</strong> Usar <strong class="info">PAQ-3</strong> (Tercer encuentro, nueva actividad)</li>
-        </ul>
-        <p class="tip"><span class="emoji">🎯</span> <em>Ajusta el subcontenido de cada actividad según la edad del grupo presente en tu cubículo para maximizar el impacto.</em></p>
-
-        <h3><span class="emoji">🎉</span> 6.1. Cubículo: Diversión (Diver)</h3>
-        <p><strong>Objetivo general:</strong> Disfrutar con límites, juego limpio, cooperación. ¡A reír y aprender!</p>
+        <h3><span class="emoji">🎉</span> 5.1. Cubículo: Diversión (Diver)</h3>
+        <p><strong>Objetivo general:</strong> Hacerles conscientes del **origen** por el cual les gustan tanto las redes sociales, la tecnología, videojuegos, etc. Explorar cómo muchas de estas preferencias vienen de la búsqueda de la autoestima, de la necesidad de ser parte de algo, de sentirse solos, de la sensación de ser importante y conseguir logros, etc.</p>
         <div class="activity-box diver">
-            <h4 class="collapsible-toggle"><span class="emoji">🎁</span> PAQ Diver-1 (Bloques 1–3) <span class="toggle-icon">▼</span></h4>
+            <h4 class="collapsible-toggle"><span class="emoji">🤸‍♀️</span> Propuestas de Actividades Prácticas (según edad) <span class="toggle-icon">▼</span></h4>
             <div class="collapsible-content active">
                 <ul>
-                    <li><strong>7–10 años: Mímica Semáforo.</strong> 🚦 Clasifica acciones divertidas en verde/amarillo/rojo y actúa 2.</li>
-                    <li><strong>10–13 años: Adivina en 3 pistas (Ocio Sano).</strong> 🕵️‍♀️ Descifra hábitos de ocio positivo con 3 claves.</li>
-                    <li><strong>14–18 años: Mini-Debate 60’’.</strong> 🗣️ ¡Defiende tu postura en un dilema de ocio en un minuto!</li>
+                    <li><strong>7–10 años: Mímica Semáforo y Cuentos Cooperativos.</strong> 🚦 Clasifican acciones divertidas en verde/amarillo/rojo y luego crean una pequeña historia grupal con títeres sobre diversión sana.</li>
+                    <li><strong>10–13 años: Desafío de Acertijos y Storyboard.</strong> 🕵️‍♀️ Resuelven 3 acertijos encadenados para "liberar" un mensaje clave sobre ocio. Luego, crean un storyboard de 4 viñetas sobre amistad sana.</li>
+                    <li><strong>14–18 años: Debate Relámpago y Diseño de Plan de Ocio.</strong> 🗣️ Participan en un debate rápido (1 min por postura) sobre un dilema de ocio. Después, diseñan un plan personal de ocio 3x1 (3 ideas, 1 límite).</li>
                 </ul>
             </div>
         </div>
-        <div class="activity-box diver">
-            <h4 class="collapsible-toggle"><span class="emoji">🌟</span> PAQ Diver-2 (Bloques 4–6) <span class="toggle-icon">▶</span></h4>
-            <div class="collapsible-content">
-                <ul>
-                    <li><strong>7–10 años: Rally 2 Pruebas.</strong> 🏁 Zig-zag y torre de vasos: ¡Trabajo en equipo!</li>
-                    <li><strong>10–13 años: Storyboard 4 Viñetas.</strong> ✍️ Crea una mini-historia visual sobre amistad sana.</li>
-                    <li><strong>14–18 años: Plan de Ocio 3x1.</strong> 📝 Diseña 3 ideas de ocio y 1 límite claro para cada una.</li>
-                </ul>
-            </div>
-        </div>
-        <div class="activity-box diver">
-            <h4 class="collapsible-toggle"><span class="emoji">✨</span> PAQ Diver-3 (Bloques 7–9) <span class="toggle-icon">▶</span></h4>
-            <div class="collapsible-content">
-                <ul>
-                    <li><strong>7–10 años: Stop-Dance Juego Limpio.</strong> 🕺💃 Baila y para; aplaude la deportividad.</li>
-                    <li><strong>10–13 años: Semáforo de Bromas.</strong> 😂 Clasifica bromas según su impacto en los demás.</li>
-                    <li><strong>14–18 años: Caso Relámpago.</strong> ⚡ Presenta un caso y toma una decisión justificada en 90 segundos.</li>
-                </ul>
-            </div>
-        </div>
-        <p class="highlight-box"><span class="emoji">✅</span> <strong>Cierre Sugerido (20–30’’):</strong> "¿Qué harás distinto para que la diversión sea sana para ti y para otros? Levanta 1 dedo con tu compromiso."</p>
+        <p class="highlight-box"><span class="emoji">✅</span> <strong>Cierre Sugerido (20–30’’):</strong> "¿Qué aprendizaje te llevas para que tu diversión sea sana y constructiva? Comparte una palabra clave."</p>
 
-        <h3><span class="emoji">🧠</span> 6.2. Cubículo: Adicción (Adicc)</h3>
-        <p><strong>Objetivo general:</strong> Reconocer hábitos, establecer límites y explorar reemplazos saludables. ¡Toma el control! 💪</p>
+        <h3><span class="emoji">🧠</span> 5.2. Cubículo: Adicción (Adicc)</h3>
+        <p><strong>Objetivo general:</strong> Hacerles conscientes del **efecto de la dopamina y los excesos**, de la psicología detrás de los juegos y el entretenimiento, y de los efectos de las adicciones en el cerebro y el comportamiento.</p>
         <div class="activity-box adicc">
-            <h4 class="collapsible-toggle"><span class="emoji">🎁</span> PAQ Adicc-1 (Bloques 1–3) <span class="toggle-icon">▼</span></h4>
+            <h4 class="collapsible-toggle"><span class="emoji">🧘‍♀️</span> Propuestas de Actividades Prácticas (según edad) <span class="toggle-icon">▼</span></h4>
             <div class="collapsible-content active">
                 <ul>
-                    <li><strong>7–10 años: Mi Reloj de Pausa.</strong> ⏰ Dibuja 1 pausa saludable para tu día.</li>
-                    <li><strong>10–13 años: Mitos vs. Verdad.</strong> 🧐 Desmiente mitos sobre hábitos con 4 tarjetas.</li>
-                    <li><strong>14–18 años: TRR (Trigger–Rutina–Recompensa) de 1 Hábito.</strong> 📊 Identifica los componentes de un hábito.</li>
+                    <li><strong>7–10 años: Reloj de Pausas y Circuito Activo.</strong> ⏰ Dibujan "su reloj de pausas saludables" y luego participan en un circuito de "descanso activo" (respiración 4-4-4, estiramientos).</li>
+                    <li><strong>10–13 años: Mitos vs. Verdad y Mapa de Límites Digitales.</strong> 🧐 Desmienten mitos sobre hábitos digitales con tarjetas. Luego, en un "mapa de apps", identifican 3 acciones límite para su uso.</li>
+                    <li><strong>14–18 años: TRR (Trigger-Rutina-Recompensa) y Mini-Detox.</strong> 📊 Identifican el ciclo TRR de un hábito personal. Luego, diseñan una regla + un sustituto para un mini-detox digital de 24 horas.</li>
                 </ul>
             </div>
         </div>
-        <div class="activity-box adicc">
-            <h4 class="collapsible-toggle"><span class="emoji">🌟</span> PAQ Adicc-2 (Bloques 4–6) <span class="toggle-icon">▶</span></h4>
-            <div class="collapsible-content">
-                <ul>
-                    <li><strong>7–10 años: Respira 4–4–4 + Estiro 20’’.</strong> 🧘 Practica una micro-pausa de bienestar.</li>
-                    <li><strong>10–13 años: Mapa de Apps.</strong> 🗺️ Lista 3 acciones para limitar el uso de tus apps favoritas.</li>
-                    <li><strong>14–18 años: Mini-Detox 24h.</strong> 🚫 Diseña una regla + un sustituto para un mini-detox digital.</li>
-                </ul>
-            </div>
-        </div>
-        <div class="activity-box adicc">
-            <h4 class="collapsible-toggle"><span class="emoji">✨</span> PAQ Adicc-3 (Bloques 7–9) <span class="toggle-icon">▶</span></h4>
-            <div class="collapsible-content">
-                <ul>
-                    <li><strong>7–10 años: Semáforo de Pantallas.</strong> 📱 Clasifica 3 ejemplos de uso de pantallas en verde/amarillo/rojo.</li>
-                    <li><strong>10–13 años: Pacto 7 Días.</strong> 🤝 Establece 1 meta medible para 7 días, ¿cuándo y cómo la lograrán?</li>
-                    <li><strong>14–18 años: Role-Play Presión de Pares.</strong> 🎭 Escenifica una respuesta a la presión de grupo.</li>
-                </ul>
-            </div>
-        </div>
-        <p class="highlight-box"><span class="emoji">✅</span> <strong>Cierre Sugerido (20–30’’):</strong> "Di en voz baja tu 1 límite de esta semana. Tócate el reloj/pulsera para recordarlo."</p>
+        <p class="highlight-box"><span class="emoji">✅</span> <strong>Cierre Sugerido (20–30’’):</strong> "Nombra un hábito saludable que te gustaría fortalecer esta semana. ¡Tócate la frente para recordarlo!"</p>
 
-        <h3><span class="emoji">🛡️</span> 6.3. Cubículo: Persecución (Perse) (hostigamiento/bullying/resiliencia; adapta a tu enfoque)</h3>
-        <p><strong>Objetivo general:</strong> Pedir ayuda, protegerse, responder con sabiduría y evidencia. ¡Sé un superhéroe de tu propia historia! 🦸‍♀️</p>
+        <h3><span class="emoji">🛡️</span> 5.3. Cubículo: Persecución (Perse)</h3>
+        <p><strong>Objetivo general:</strong> Hacerles conscientes de los **peligros ocultos** detrás de todo el entretenimiento y las redes sociales, de cómo están expuestos y cómo deben cuidarse para proteger su bienestar y seguridad.</p>
         <div class="activity-box perse">
-            <h4 class="collapsible-toggle"><span class="emoji">🎁</span> PAQ Perse-1 (Bloques 1–3) <span class="toggle-icon">▼</span></h4>
+            <h4 class="collapsible-toggle"><span class="emoji">🤝</span> Propuestas de Actividades Prácticas (según edad) <span class="toggle-icon">▼</span></h4>
             <div class="collapsible-content active">
                 <ul>
-                    <li><strong>7–10 años: Títere-Frase: "¡Alto! Voy a decirlo a…".</strong> 🎭 Practica con títeres cómo pedir ayuda.</li>
-                    <li><strong>10–13 años: Ruta de Reporte.</strong> 🧭 Identifica a quién, cómo y cuándo reportar una situación difícil.</li>
-                    <li><strong>14–18 años: Caso en Redes.</strong> 📸 Analiza un caso de cyberbullying: qué evidenciar, a quién reportar.</li>
+                    <li><strong>7–10 años: Títeres de Empoderamiento y Escudo de Apoyo.</strong> 🎭 Practican con títeres frases como "¡Alto!" y a quién acudir. Luego, dibujan su "escudo de apoyo" con personas de confianza.</li>
+                    <li><strong>10–13 años: Ruta de Reporte y Observador Valiente.</strong> 🧭 Identifican a quién, cómo y cuándo reportar. Luego, discuten 1 forma segura de intervenir como "observador valiente".</li>
+                    <li><strong>14–18 años: Caso en Redes y Plan 3 Capas.</strong> 📸 Analizan un caso de cyberbullying (qué evidenciar, a quién reportar). Luego, diseñan un plan de respuesta en 3 niveles: personal, con pares, con adulto responsable.</li>
                 </ul>
             </div>
         </div>
-        <div class="activity-box perse">
-            <h4 class="collapsible-toggle"><span class="emoji">🌟</span> PAQ Perse-2 (Bloques 4–6) <span class="toggle-icon">▶</span></h4>
-            <div class="collapsible-content">
-                <ul>
-                    <li><strong>7–10 años: Escudo de Apoyo.</strong> 🤝 Nombra 2 personas clave en quienes confías para pedir ayuda.</li>
-                    <li><strong>10–13 años: Observador Valiente.</strong> 🦸 Discute 1 forma segura de intervenir si ves a alguien en apuros.</li>
-                    <li><strong>14–18 años: Plan 3 Capas.</strong> 🗺️ Diseña un plan de respuesta en 3 niveles: personal, con pares, con adulto responsable.</li>
-                </ul>
-            </div>
-        </div>
-        <div class="activity-box perse">
-            <h4 class="collapsible-toggle"><span class="emoji">✨</span> PAQ Perse-3 (Bloques 7–9) <span class="toggle-icon">▶</span></h4>
-            <div class="collapsible-content">
-                <ul>
-                    <li><strong>7–10 años: Semáforo de Situaciones.</strong> 🚥 Clasifica situaciones difíciles en verde/amarillo/rojo.</li>
-                    <li><strong>10–13 años: Diario 3x2.</strong> ✍️ Escribe 3 cosas que te afectan y 2 fortalezas personales.</li>
-                    <li><strong>14–18 años: Anclajes.</strong> ⚓ Identifica un verso, frase o contacto de emergencia que te dé fuerza.</li>
-                </ul>
-            </div>
-        </div>
-        <p class="highlight-box"><span class="emoji">✅</span> <strong>Cierre Sugerido (20–30’’):</strong> "¿Cuál será tu primer paso si ves o vives una situación injusta? Señálalo con el pulgar."</p>
+        <p class="highlight-box"><span class="emoji">✅</span> <strong>Cierre Sugerido (20–30’’):</strong> "¿Cuál será tu anclaje personal (frase/persona) si te sientes en una situación difícil? Guárdalo en tu mente."</p>
     </div>
 
     <div class="section-box">
-        <h2><span class="emoji">📍</span> 7. Señalética y Orden de la Sala</h2>
-        <p>¡Una buena señalización garantiza un flujo perfecto!</p>
+        <h2><span class="emoji">📍</span> 6. Señalética y Orden de la Sala</h2>
+        <p>¡Una buena señalización garantiza un flujo perfecto en ambas fases!</p>
         <ul>
-            <li><strong>Rótulos Grandes de Cubículos:</strong> "Diver 🎉", "Adicc 🧠", "Perse 🛡️" deben ser visibles a 10 metros de distancia.</li>
-            <li><strong>Flechas de Color:</strong> ➡️ En paredes/suelo indicando claramente la ruta de rotación (Diver<span class="rotation-arrow">➔</span>Adicc<span class="rotation-arrow">➔</span>Perse). ¡Sigue el camino!</li>
-            <li><strong>Identificación de Grupos:</strong> 🏷️ Brazaletes o tarjetas por grupo: <strong class="group-A">Grupo A (verde 🍏)</strong>, <strong class="group-B">Grupo B (azul 📘)</strong>, <strong class="group-C">Grupo C (naranja 🧡)</strong>.</li>
-            <li><strong>Puntos de Espera:</strong> 🟠 Círculos o marcas en el piso para que cada grupo se forme rápidamente (en 10-15 segundos) al llegar a una estación.</li>
-            <li><strong>Zona Tampón:</strong> Un espacio de 2-3 m² por cubículo para grupos que lleguen un minuto antes. ¡No hay apuros!</li>
+            <li>Para la Fase 1: Escenario central claro, posiblemente con "paredes" o banners temáticos para cada conferencia. Sillas para todos los grupos juntos.</li>
+            <li>Para la Fase 2:
+                <ul>
+                    <li>Rótulos Grandes de Cubículos: "Diver 🎉", "Adicc 🧠", "Perse 🛡️" deben ser visibles a 10 metros de distancia.</li>
+                    <li>Flechas de Rotación: ➡️ En el suelo o paredes, indicando la ruta de rotación horaria (Diver <span class="rotation-arrow">➔</span> Adicc <span class="rotation-arrow">➔</span> Perse) para los grupos en la Fase 2. ¡Sigue el camino!</li>
+                </ul>
+            </li>
+            <li>Identificación de Grupos: 🏷️ Brazaletes o tarjetas por grupo: <strong class="group-A">Grupo A (verde 🍏)</strong>, <strong class="group-B">Grupo B (azul 📘)</strong>, <strong class="group-C">Grupo C (naranja 🧡)</strong>.</li>
+            <li>Puntos de Espera: 🟠 Círculos o marcas en el piso para que cada grupo se forme rápidamente (en 10-15 segundos) al llegar a una estación.</li>
+            <li>Zona Tampón: Un espacio de 2-3 m² por cubículo para grupos que lleguen un minuto antes. ¡No hay apuros!</li>
         </ul>
     </div>
 
     <div class="section-box">
-        <h2><span class="emoji">🛠️</span> 8. Materiales (por Cubículo) y Logística</h2>
-        <p class="info"><strong>Materiales Comunes a Todas las Estaciones:</strong></p>
+        <h2><span class="emoji">🛠️</span> 7. Materiales (por Cubículo/Fase) y Logística</h2>
+        <p class="info">Materiales Comunes a Todas las Estaciones/Fases:</p>
         <ul>
             <li>Cronómetro o celular en modo avión (solo para el timekeeper y facilitadores). ⏱️</li>
             <li>Campanita pequeña (para el timekeeper). 🔔</li>
             <li>Plumones 🖊️, hojas A5/A4 📄, masking tape 🩹.</li>
             <li>Stickers de colores (rojo/amarillo/verde). 🔴🟡🟢</li>
-            <li>Tarjetas plastificadas para "semáforos", "mitos/verdades", "casos". 🃏</li>
-            <li>6 vasos plásticos (para rally) 🥤, toallitas, agua. 💧</li>
+            <li>Tarjetas plastificadas. 🃏</li>
+            <li>Toallitas, agua. 💧</li>
         </ul>
-        <h4>Materiales Específicos por Cubículo:</h4>
+        <h4>Materiales Específicos:</h4>
         <ul>
-            <li><strong>Diver 🎉:</strong> Tarjetas de mímica/bromas/casos, música breve para stop-dance (opcional) 🎶, conos o cinta para zig-zag.</li>
-            <li><strong>Adicc 🧠:</strong> Tarjetas TRR, plantillas de reloj/plan, hojas de pacto, hojas "Mapa de apps" (con 3 casillas: notificaciones, tiempo, horarios).</li>
-            <li><strong>Perse 🛡️:</strong> Títeres simples (papel o calcetines) 🎭, tarjetas "semáforo de situaciones", plantillas "ruta de reporte", "escudo de apoyo", "plan 3 capas".</li>
+            <li>Para la Fase 1 (Conferencias): Banners o proyecciones visuales para cambiar rápidamente la "pared" temática (Diversión, Adicción, Persecución). Micrófono para el conferencista.</li>
+            <li>Para la Fase 2 (Actividades):
+                <ul>
+                    <li>Diver 🎉: Tarjetas de mímica/acciones, títeres simples (papel), conos o cinta para zig-zag, 6 vasos plásticos, plantillas de storyboard, hojas para diseño de plan de ocio.</li>
+                    <li>Adicc 🧠: Plantillas de reloj/plan, tarjetas "Mitos vs. Verdad", hojas "Mapa de apps", hojas de pacto.</li>
+                    <li>Perse 🛡️: Títeres simples (papel o calcetines) 🎭, plantillas "ruta de reporte", "escudo de apoyo", "plan 3 capas", tarjetas "semáforo de situaciones".</li>
+                </ul>
+            </li>
         </ul>
-        <p class="tip"><span class="emoji">🏃</span> <strong>Runner:</strong> Debe reponer materiales cada 3 bloques (después de PAQ-1 y PAQ-2) para asegurar el flujo continuo. ¡Siempre listos! 💪</p>
+        <p class="tip"><span class="emoji">🏃</span> Runner: Debe tener los materiales para las transiciones de Fase 1 listos. Luego, preparar y reponer materiales para cada cubículo en la Fase 2. ¡Siempre listos! 💪</p>
     </div>
 
     <div class="section-box">
-        <h2><span class="emoji">🗣️</span> 9. Manejo de Tiempos y Señales (Disciplina Positiva)</h2>
-        <p>¡La sincronización es clave para el éxito!</p>
+        <h2><span class="emoji">🗣️</span> 8. Manejo de Tiempos y Señales (Disciplina Positiva)</h2>
+        <p>¡La sincronización es clave para el éxito en ambas fases!</p>
         <ul>
-            <li><strong>Silencio en Pasillos:</strong> Los facilitadores deben esperar a que el conferencista termine su introducción a la actividad antes de iniciar. 🤫</li>
-            <li><strong>Señal de Mano para Atención:</strong> Mano arriba ✋ = silencio inmediato y atención.</li>
-            <li><strong>Cuenta Regresiva Visible:</strong> "3–2–1" para la transición de 1 minuto. ¡A prepararse!</li>
-            <li><strong>Llegadas Tarde:</strong> Los niños que lleguen tarde se integran al círculo discretamente; la explicación NO se reinicia. 🚶‍♂️➡️➡️</li>
+            <li>Fase 1: El conferencista y el equipo de apoyo deben estar muy atentos a las señales del timekeeper para las transiciones de tema.</li>
+            <li>Fase 2:
+                <ul>
+                    <li>Silencio en Pasillos: Los facilitadores deben asegurar que los grupos se muevan de forma ordenada y silenciosa entre cubículos. 🤫</li>
+                    <li>Señal de Mano para Atención: Mano arriba ✋ = silencio inmediato y atención en cualquier momento.</li>
+                    <li>Cuenta Regresiva Visible: "3–2–1" para la transición de 1 minuto. ¡A prepararse!</li>
+                </ul>
+            </li>
+            <li>Llegadas Tarde: Los niños que lleguen tarde se integran al grupo discretamente; la explicación NO se reinicia. 🚶‍♂️➡️➡️</li>
         </ul>
     </div>
 
     <div class="section-box">
-        <h2><span class="emoji">🚨</span> 10. Contingencias y Seguridad</h2>
+        <h2><span class="emoji">🚨</span> 9. Contingencias y Seguridad</h2>
         <p>Siempre preparados para cualquier situación. ¡La seguridad primero! 🛡️</p>
         <ul>
-            <li><strong>Aforo Grande (>18 niños por grupo):</strong> Dividir el grupo en 2 subgrupos y duplicar el material; NO ampliar el tiempo. ¡Más manos, mismo tiempo! 🤝</li>
-            <li><strong>Ruido/Eco:</strong> El facilitador debe acercar al grupo en semicírculo, proyectando la voz a 1-2 metros de distancia para una mejor escucha. 👂</li>
-            <li><strong>Material Agotado:</strong> Usar alternativas creativas (papel en blanco, gestos, comunicación oral). ¡Improvisa con ingenio! 🎨</li>
-            <li><strong>Incidencias (Caídas, Llanto):</strong> El facilitador levanta la mano discretamente ✋ → el Runner acude; el resto del evento continúa con calma. Mantén la serenidad.</li>
-            <li><strong>Baño:</strong> Solo durante las transiciones y con un acompañante asignado (si aplica según las normas del lugar y la edad). 🚽➡️🚶‍♀️</li>
+            <li>Aforo Grande (>18 niños por grupo): Dividir el grupo en 2 subgrupos en la Fase 2 y duplicar el material de las actividades; NO ampliar el tiempo. ¡Más manos, mismo tiempo! 🤝</li>
+            <li>Ruido/Eco (Fase 1): Considerar el uso de micrófonos de alta calidad y un sistema de sonido eficiente para que todos escuchen claramente.</li>
+            <li>Ruido/Eco (Fase 2): El facilitador debe acercar al grupo en semicírculo, proyectando la voz a 1-2 metros de distancia para una mejor escucha. 👂</li>
+            <li>Material Agotado: Usar alternativas creativas (papel en blanco, gestos, comunicación oral). ¡Improvisa con ingenio! 🎨</li>
+            <li>Incidencias (Caídas, Llanto): El facilitador levanta la mano discretamente ✋ → el Runner acude; el resto del evento continúa con calma. Mantén la serenidad.</li>
+            <li>Baño: Solo durante las transiciones y con un acompañante asignado (si aplica según las normas del lugar y la edad). 🚽➡️🚶‍♀️</li>
         </ul>
     </div>
 
     <div class="section-box">
-        <h2><span class="emoji">📝</span> 11. Mini-Guiones por Edad (para facilitar el tono)</h2>
-        <p>¡Adapta tu lenguaje para conectar mejor con cada grupo!</p>
+        <h2><span class="emoji">📝</span> 10. Mini-Guiones por Edad (para facilitar el tono)</h2>
+        <p>¡Adapta tu lenguaje para conectar mejor con cada grupo en ambas fases!</p>
         <ul>
-            <li><strong>7–10 años:</strong> Lenguaje simple, ejemplos cotidianos, 1 consigna por vez, mucho gesto y movimiento. ¡Diversión garantizada! 🌟</li>
-            <li><strong>10–13 años:</strong> Retos cortos, preguntas "sí/no + por qué breve", roles y uso de tarjetas interactivas. ¡Fomenta la participación! 💬</li>
-            <li><strong>14–18 años:</strong> Dilemas, decisiones en 60-90 segundos, planificación personal, interacción breve entre pares. ¡Invita a la reflexión! 🤔</li>
+            <li>7–10 años: Lenguaje simple, ejemplos cotidianos, 1 consigna por vez, mucho gesto y movimiento. ¡Diversión garantizada! 🌟</li>
+            <li>10–13 años: Retos cortos, preguntas "sí/no + por qué breve", roles y uso de tarjetas interactivas. ¡Fomenta la participación! 💬</li>
+            <li>14–18 años: Dilemas, decisiones en 60-90 segundos, planificación personal, interacción breve entre pares. ¡Invita a la reflexión! 🤔</li>
         </ul>
     </div>
 
     <div class="section-box">
-        <h2><span class="emoji">📊</span> 12. Evaluación Rápida (sin interrumpir el flujo)</h2>
+        <h2><span class="emoji">📊</span> 11. Evaluación Rápida (sin interrumpir el flujo)</h2>
         <p>¡Comentarios instantáneos para mejorar y celebrar!</p>
         <ul>
-            <li><strong>Pulgar Arriba/Medio/Abajo:</strong> Al final de cada micro-actividad, pedir a los niños que valoren rápidamente. 👍 neutral 👎</li>
-            <li><strong>Tarjeta "Salida":</strong> Al cierre del evento, pedir a cada niño que escriba 1 compromiso o aprendizaje en una tarjeta y la entregue al facilitador a la salida. ¡Un recuerdo valioso! 💌</li>
-            <li><strong>Foto Grupal Final:</strong> (1:52–2:00) como cierre emocional del evento. ¡Sonrisas para el recuerdo! 📸🥳</li>
+            <li>Al final de la Fase 1 (Conferencias): Una pregunta rápida de pulgar arriba/abajo/medio sobre la claridad del tema.</li>
+            <li>Al final de cada actividad (Fase 2): Pulgar Arriba/Medio/Abajo para valorar la actividad. 👍 neutral 👎</li>
+            <li>Tarjeta "Salida" (al cierre final del evento): Pedir a cada niño que escriba 1 compromiso o aprendizaje en una tarjeta y la entregue al facilitador a la salida. ¡Un recuerdo valioso! 💌</li>
+            <li>Foto Grupal Final: (1:52–2:00) como cierre emocional del evento. ¡Sonrisas para el recuerdo! 📸🥳</li>
         </ul>
     </div>
 
     <div class="section-box">
-        <h2><span class="emoji">📋</span> 13. Checklists Imprimibles para el Equipo</h2>
+        <h2><span class="emoji">📋</span> 12. Checklists Imprimibles para el Equipo</h2>
         <p>¡Asegúrate de que no se escape ningún detalle crucial!</p>
 
         <h3><span class="emoji">✅</span> Checklist de Preparación (30 a 5 minutos antes del inicio)</h3>
-        <div class="checklist-item"><input type="checkbox" id="prep1"><label for="prep1">Rótulos Diver/Adicc/Perse y flechas de ruta colocados y visibles. 🧭</label></div>
-        <div class="checklist-item"><input type="checkbox" id="prep2"><label for="prep2">Materiales de PAQ-1 listos en cada cubículo y organizados. 📦</label></div>
-        <div class="checklist-item"><input type="checkbox" id="prep3"><label for="prep3">Cronómetros del Timekeeper y facilitadores probados (sonido a volumen medio). ⏰</label></div>
-        <div class="checklist-item"><input type="checkbox" id="prep4"><label for="prep4">Asignación de grupos y brazaletes/tarjetas de identificación listas. 🆔</label></div>
-        <div class="checklist-item"><input type="checkbox" id="prep5"><label for="prep5">Briefing rápido final de señales (mano arriba, campanita, trompeta) con todo el equipo. 🗣️</label></div>
+        <div class="checklist-item"><input type="checkbox" id="prep1"><label for="prep1">Espacio de Fase 1 (Conferencias) listo con sillas para todos. 🪑</label></div>
+        <div class="checklist-item"><input type="checkbox" id="prep2"><label for="prep2">Banners/proyecciones temáticas para Conferencias listos para cambio rápido. 🖼️</label></div>
+        <div class="checklist-item"><input type="checkbox" id="prep3"><label for="prep3">Materiales de Actividades para Fase 2 pre-organizados y listos para montar durante la transición de fases. 📦</label></div>
+        <div class="checklist-item"><input type="checkbox" id="prep4"><label for="prep4">Cronómetros del Timekeeper y facilitadores probados (sonido a volumen medio). ⏰</label></div>
+        <div class="checklist-item"><input type="checkbox" id="prep5"><label for="prep5">Asignación de grupos y brazaletes/tarjetas de identificación listas. 🆔</label></div>
+        <div class="checklist-item"><input type="checkbox" id="prep6"><label for="prep6">Briefing rápido final de señales con todo el equipo. 🗣️</label></div>
 
-        <h3><span class="emoji">🔄</span> Checklist por Bloque (para el Facilitador de Cubículo)</h3>
-        <div class="checklist-item"><input type="checkbox" id="block1"><label for="block1">Escucho la campanita 🔔 (min. 7) del Timekeeper <span class="rotation-arrow">➔</span> el conferencista introduce la actividad y tomo la palabra. 🎤➡️👨‍🏫</label></div>
-        <div class="checklist-item"><input type="checkbox" id="block2"><label for="block2"><strong>Explico y ejecuto</strong> el PAQ correspondiente (1/2/3) y adapto el contenido a la edad del grupo. 🎯</label></div>
-        <div class="checklist-item"><input type="checkbox" id="block3"><label for="block3">Realizo el cierre de 20-30 segundos con pregunta/refuerzo. ✅</label></div>
-        <div class="checklist-item"><input type="checkbox" id="block4"><label for="block4">Escucho el aviso de transición (min. 11) <span class="rotation-arrow">➔</span> organizo la fila por color para la siguiente rotación. ➡️🚶‍♀️</label></div>
+        <h3><span class="emoji">🎤</span> Checklist del Conferencista (Fase 1: por conferencia)</h3>
+        <div class="checklist-item"><input type="checkbox" id="conf1"><label for="conf1">Inicio de charla dinámico (conexión, objetivo). ✨</label></div>
+        <div class="checklist-item"><input type="checkbox" id="conf2"><label for="conf2">Desarrollo con 2-3 ideas clave y ejemplos para varias edades. 🧠</label></div>
+        <div class="checklist-item"><input type="checkbox" id="conf3"><label for="conf3">Cierre reflexivo e introducción al siguiente tema. 💡</label></div>
+        <div class="checklist-item"><input type="checkbox" id="conf4"><label for="conf4">Atento a las señales del Timekeeper para duración y transiciones. ⏱️</label></div>
+
+        <h3><span class="emoji">👨‍🏫</span> Checklist del Facilitador (Fase 2: por actividad)</h3>
+        <div class="checklist-item"><input type="checkbox" id="fac1"><label for="fac1">Recibo al grupo y aseguro el orden. 🤝</label></div>
+        <div class="checklist-item"><input type="checkbox" id="fac2"><label for="fac2">Explico y ejecuto la actividad práctica correspondiente a mi cubículo y adapto a la edad del grupo. 🎯</label></div>
+        <div class="checklist-item"><input type="checkbox" id="fac3"><label for="fac3">Realizo el cierre de 20-30 segundos con pregunta/refuerzo. ✅</label></div>
+        <div class="checklist-item"><input type="checkbox" id="fac4"><label for="fac4">Escucho el aviso de transición (min. 15 de actividad) <span class="rotation-arrow">➔</span> dirijo al grupo a su siguiente estación en sentido horario. ➡️🚶‍♀️</label></div>
 
         <h3><span class="emoji">🏁</span> Checklist de Cierre del Evento (últimos 8 minutos)</h3>
         <div class="checklist-item"><input type="checkbox" id="close1"><label for="close1">Recojo tarjetas/hojas de "salida" de los niños. 📤</label></div>
@@ -849,29 +813,29 @@
                 });
             });
 
-            // 3. Group Path Highlighting (Basic - highlights cells in the main table)
-            const groupLabels = document.querySelectorAll('.group-A[data-group-id], .group-B[data-group-id], .group-C[data-group-id]');
-            const itineraryTable = document.getElementById('itinerary-table');
+            // 3. Group Path Highlighting (for Phase 2 table)
+            const groupLabelsPhase2 = document.querySelectorAll('#phase2-table + h3 + p strong[data-group-id]'); // Select group names below Phase 2 table
+            const phase2Table = document.getElementById('phase2-table');
             const groupColors = {
                 'A': '28, 167, 69', // RGB for --group-A-color
                 'B': '0, 123, 255', // RGB for --group-B-color
                 'C': '253, 126, 20'  // RGB for --group-C-color
             };
 
-            groupLabels.forEach(label => {
+            groupLabelsPhase2.forEach(label => {
                 const groupId = label.dataset.groupId;
                 label.addEventListener('mouseenter', () => {
-                    itineraryTable.style.setProperty('--highlight-rgb', groupColors[groupId]);
-                    const cellsToHighlight = itineraryTable.querySelectorAll(`td[data-group-loc="${groupId}"]`);
+                    phase2Table.style.setProperty('--highlight-rgb', groupColors[groupId]);
+                    const cellsToHighlight = phase2Table.querySelectorAll(`td[data-group-loc="${groupId}"]`);
                     cellsToHighlight.forEach(cell => {
-                        cell.classList.add('path-highlight');
+                        cell.classList.add('highlighted');
                     });
                 });
 
                 label.addEventListener('mouseleave', () => {
-                    const cellsToHighlight = itineraryTable.querySelectorAll(`td[data-group-loc="${groupId}"]`);
+                    const cellsToHighlight = phase2Table.querySelectorAll(`td[data-group-loc="${groupId}"]`);
                     cellsToHighlight.forEach(cell => {
-                        cell.classList.remove('path-highlight');
+                        cell.classList.remove('highlighted');
                     });
                 });
             });
