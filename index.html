@@ -1,720 +1,881 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="light">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Padres Conectados - Curso intensivo de 4 horas para guiar y proteger a tus hijos en el mundo digital. Aprende controles parentales, comunicación efectiva y manejo de crisis digitales en Colombia.">
-    <title>Padres Conectados - Curso intensivo</title>
-
-    <!-- Open Graph Meta Tags para vista previa al compartir -->
-    <meta property="og:title" content="Padres Conectados - Curso intensivo">
-    <meta property="og:description" content="Guía y protege a tus hijos en el mundo digital. Aprende controles parentales, comunicación efectiva y manejo de crisis digitales en Colombia con este curso intensivo.">
-    <meta property="og:image" content="https://www.commonsensemedia.org/sites/default/files/styles/ratio_16_9_large/public/blog/2020-covid19-latino-blog.jpg">
-    <meta property="og:url" content="https://alejoicarv.github.io/Curso-padres/"> <!-- URL de tu web en GitHub Pages -->
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="es_CO">
-    <!-- Fin Open Graph Meta Tags -->
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>🚀 Plan Operativo Detallado - ¡Evento de 2 Horas al Éxito! 🚀</title>
     <style>
-      /* === VARIABLES DE COLOR Y CONFIGURACIÓN GENERAL === */
-      :root {
-        --primary: #136F63; /* Original Teal */
-        --secondary: #EFEFD0; /* Light Cream */
-        --accent: #FF6B35; /* Original Orange */
-        --text-light: #ffffff;
-        --text-dark: #333333;
-        --background: #ffffff;
-        --whatsapp-color: #25D366; /* WhatsApp Green */
-      }
-
-      /* Theme 2: Morado suave + coral */
-      body.theme2 {
-        --primary: #1D3557; /* Dark Blue */
-        --secondary: #A8DADC; /* Light Cyan */
-        --accent: #E6C229; /* Golden Yellow */
-        --text-light: #ffffff;
-      }
-
-      /* Theme 3: Gris cálido + verde */
-      body.theme3 {
-        --primary: #7D1D3F; /* Dark Red/Wine */
-        --secondary: #F2E8CF; /* Light Beige */
-        --accent: #34A0A4; /* Teal Green */
-        --text-light: #ffffff;
-      }
-
-      /* === ESTILOS GENERALES DEL CUERPO === */
-      body {
-        font-family: 'Montserrat', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: var(--background);
-        color: var(--text-dark);
-        max-width: 100%; /* Permite que el cuerpo sea responsive */
-        width: min(210mm, 850px); /* Ancho ajustado para una apariencia más compacta */
-        min-height: 100vh; /* Ajuste para asegurar que ocupe al menos la altura de la vista */
-        margin: 0 auto;
-        box-sizing: border-box;
-        overflow-x: hidden;
-        position: relative;
-      }
-
-      /* === CONTENEDOR PRINCIPAL DEL FLYER === */
-      .flyer-container {
-        padding: 20px;
-        box-sizing: border-box;
-        position: relative;
-        background-color: var(--background);
-        background-image:
-          radial-gradient(circle at 20% 50%, rgba(19, 111, 99, 0.03) 0%, transparent 50%),
-          radial-gradient(circle at 80% 20%, rgba(255, 107, 53, 0.03) 0%, transparent 50%),
-          radial-gradient(circle at 40% 80%, rgba(239, 239, 208, 0.05) 0%, transparent 50%);
-      }
-
-      /* === ANIMACIONES === */
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      @keyframes pulse {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.05); }
-      }
-
-      /* === DISTINTIVO DE CURSO NUEVO === */
-      .new-course-badge {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        background: linear-gradient(45deg, var(--accent), #ff8c5a);
-        color: white;
-        padding: 8px 15px;
-        border-radius: 20px;
-        font-size: 12px;
-        font-weight: 600;
-        text-transform: uppercase;
-        z-index: 10;
-        box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
-      }
-
-      /* === ENCABEZADO PRINCIPAL === */
-      .header {
-        text-align: center;
-        padding: 15px 0;
-        background: linear-gradient(135deg, var(--primary) 0%, #1a8a7a 100%);
-        color: var(--text-light);
-        border-radius: 8px 8px 0 0;
-        transition: all 0.3s ease;
-        position: relative;
-        box-shadow: 0 6px 20px rgba(19, 111, 99, 0.3);
-      }
-
-      .header-logo {
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        font-size: 32px;
-        color: var(--secondary);
-        filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
-      }
-
-      .header h1 {
-        margin: 0;
-        font-size: 48px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        line-height: 1.2;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        color: white; /* Asegura el color blanco para el título principal */
-      }
-
-      .header h2 {
-        margin: 10px 0 0 0;
-        font-size: 18px;
-        font-weight: 400;
-        max-width: 80%;
-        margin-left: auto;
-        margin-right: auto;
-        line-height: 1.4;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-        color: white; /* Ajuste para visibilidad: texto en blanco */
-      }
-
-      /* === ESTILOS DE LA IMAGEN PRINCIPAL === */
-      .main-image {
-        text-align: center;
-        margin-top: 25px;
-        margin-bottom: 25px;
-      }
-      .main-image img {
-        max-width: 90%; /* Asegura que la imagen se escale */
-        height: auto;
-        display: block;
-        margin: 0 auto;
-        border-radius: 12px;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-      }
-
-      /* === SECCIÓN DE PRECIO Y LLAMADA A LA ACCIÓN === */
-      .price-cta {
-        background: linear-gradient(45deg, var(--accent) 0%, #ff8c5a 100%);
-        padding: 15px;
-        color: white;
-        text-align: center;
-        font-size: 24px;
-        font-weight: 600;
-        margin: 20px 0; /* Margen para separarlo del contenido adyacente */
-        border-radius: 12px;
-        box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
-        transition: all 0.3s ease;
-        position: relative;
-      }
-
-      .limited-seats {
-        display: inline-block;
-        background-color: #dc3545;
-        color: white;
-        padding: 4px 12px;
-        border-radius: 15px;
-        font-size: 12px;
-        font-weight: 600;
-        text-transform: uppercase;
-        margin-left: 10px;
-        animation: pulse 2s infinite;
-        box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
-      }
-
-      .cta-button {
-          display: inline-block;
-          background-color: var(--primary); /* Usa el color primario para el botón */
-          color: var(--text-light);
-          padding: 12px 25px;
-          border-radius: 8px;
-          text-decoration: none;
-          font-size: 20px;
-          font-weight: 600;
-          margin-top: 15px;
-          transition: background-color 0.3s ease, transform 0.2s ease;
-          box-shadow: 0 4px 15px rgba(19, 111, 99, 0.3);
-          animation: pulse 2s infinite; /* Animación de pulsación para el botón */
-      }
-
-      .cta-button:hover {
-          background-color: #0e5a52; /* Oscurece el primario al pasar el ratón */
-          transform: translateY(-2px);
-      }
-
-
-      /* === CONTENEDOR DE BLOQUES INFORMATIVOS === */
-      .blocks-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-        margin: 35px 0;
-      }
-
-      /* === BLOQUES DE INFORMACIÓN === */
-      .block {
-        background-color: var(--secondary);
-        color: #2d2d2d;
-        padding: 20px;
-        border-radius: 16px;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        transition: all 0.3s ease;
-        border: 1px solid rgba(19, 111, 99, 0.1);
-        position: relative;
-        animation: fadeInUp 0.6s ease-out forwards;
-        opacity: 0;
-      }
-
-      .block:nth-child(1) { animation-delay: 0.1s; }
-      .block:nth-child(2) { animation-delay: 0.2s; }
-      .block:nth-child(3) { animation-delay: 0.3s; }
-      .block:nth-child(4) { animation-delay: 0.4s; }
-
-      .block::before {
-        content: '';
-        position: absolute;
-        top: -2px;
-        right: -2px;
-        width: 20px;
-        height: 20px;
-        background: var(--accent);
-        clip-path: polygon(100% 0, 0 0, 100% 100%);
-        border-radius: 0 16px 0 0;
-      }
-
-      .block:hover {
-        transform: translateY(-8px) scale(1.02);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-        border-color: var(--accent);
-      }
-
-      .block-header {
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-      }
-
-      .block-icon {
-        font-size: 16px; /* Aún más pequeño para las viñetas */
-        margin-right: 8px;
-        color: var(--primary);
-        background-color: white;
-        width: 32px; /* Aún más pequeño */
-        height: 32px; /* Aún más pequeño */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 12px rgba(19, 111, 99, 0.2);
-      }
-
-      .block-title {
-        font-size: 18px;
-        font-weight: 600;
-        margin: 0;
-        color: #1a4a5a;
-      }
-
-      .block-content {
-        font-size: 13px; /* Fuente más pequeña para el contenido del bloque */
-        line-height: 1.4;
-        color: #2d2d2d;
-        font-weight: 500;
-      }
-      .block-content p strong {
-          font-weight: 600; /* Asegura que el texto en negrita siga siendo resaltado */
-      }
-
-      .color-selector-description {
-        text-align: center;
-        font-size: 12px;
-        color: #666;
-        margin-bottom: 15px;
-        font-style: italic;
-      }
-
-      .color-selector {
-        display: flex;
-        justify-content: center;
-        margin: 10px 0;
-      }
-
-      .color-option {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        margin: 0 5px;
-        cursor: pointer;
-        border: 2px solid white;
-        transition: all 0.3s ease;
-        position: relative;
-        box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-      }
-
-      .color-option:hover {
-        transform: scale(1.2);
-        box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-      }
-
-      .color-option::after {
-        content: attr(title);
-        position: absolute;
-        bottom: -35px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: rgba(0,0,0,0.8);
-        color: white;
-        padding: 4px 8px;
-        border-radius: 4px;
-        font-size: 10px;
-        white-space: nowrap;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        pointer-events: none;
-      }
-
-      .color-option:hover::after {
-        opacity: 1;
-      }
-
-      .option1 {
-        background-color: #136F63;
-      }
-
-      .option2 {
-        background-color: #1D3557;
-      }
-
-      .option3 {
-        background-color: #7D1D3F;
-      }
-
-      /* Estilos para la sección del instructor */
-      .instructor-info {
-        background-color: var(--secondary);
-        padding: 25px;
-        border-radius: 16px;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-        margin: 35px 0;
-        text-align: center;
-        border: 1px solid rgba(19, 111, 99, 0.1);
-      }
-      .instructor-info h3 {
-        font-size: 22px;
-        font-weight: 700;
-        color: var(--primary);
-        margin-bottom: 15px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-      .instructor-info p {
-        font-size: 15px;
-        line-height: 1.6;
-        color: #2d2d2d;
-        margin-bottom: 10px;
-      }
-      .instructor-info p strong {
-        font-weight: 700;
-        color: #1a4a5a;
-      }
-
-
-      /* Ajustes del pie de página */
-      .footer {
-        padding-top: 20px;
-        border-top: 1px solid rgba(0,0,0,0.1);
-        margin-top: 30px;
-      }
-
-      .footer-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 20px;
-        padding-bottom: 20px;
-      }
-      .footer-item {
-        display: flex;
-        align-items: flex-start;
-        margin-bottom: 10px;
-        font-size: 15px; /* Ligeramente más grande para mejor legibilidad */
-        line-height: 1.3;
-      }
-      .footer-item div {
-        font-weight: 500; /* Resaltar texto */
-        color: var(--text-dark); /* Asegurar color de texto */
-      }
-      .footer-icon {
-        font-size: 22px; /* Icono ligeramente más grande */
-        margin-right: 10px;
-        color: var(--primary);
-        flex-shrink: 0;
-      }
-      .footer-item a { /* Estilos para los enlaces en el footer */
-        color: var(--primary); /* Usar color primario para los enlaces */
-        text-decoration: none;
-        transition: color 0.2s ease;
-        font-weight: 600; /* Resaltar enlaces */
-      }
-      .footer-item a:hover {
-        color: var(--accent); /* Cambiar color al pasar el ratón */
-      }
-
-      /* WhatsApp Floating Button */
-      .whatsapp-float-button {
-          position: fixed;
-          bottom: 25px;
-          right: 25px;
-          background-color: var(--whatsapp-color);
-          color: white;
-          width: 55px;
-          height: 55px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 28px;
-          box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-          z-index: 1000;
-          transition: transform 0.3s ease, background-color 0.3s ease;
-          cursor: pointer;
-          text-decoration: none;
-      }
-
-      .whatsapp-float-button:hover {
-          transform: scale(1.1);
-          background-color: #1DA851; /* Un verde ligeramente más oscuro al pasar el ratón */
-      }
-
-      @media print {
-        .color-selector, .whatsapp-float-button {
-          display: none;
+        :root {
+            --primary-color: #1a5276;
+            --secondary-color: #2980b9;
+            --accent-color: #e67e22;
+            --success-color: #1abc9c;
+            --warning-color: #f39c12;
+            --danger-color: #e74c3c;
+            --text-color: #333;
+            --light-bg: #f9f9f9;
+            --white-bg: #ffffff;
+            --border-color: #dcdcdc;
+            --shadow-light: 0 2px 5px rgba(0,0,0,0.05);
+            --shadow-medium: 0 4px 10px rgba(0,0,0,0.1);
+            --cubicle-diver-bg: #e0f7fa; /* Light Cyan */
+            --cubicle-adicc-bg: #ffe0b2; /* Light Orange */
+            --cubicle-perse-bg: #e8f5e9; /* Light Green */
+            --conferencista-bg: #d1ecf1; /* Light Blue Grey */
+            --group-A-color: #28a745;
+            --group-B-color: #007bff;
+            --group-C-color: #fd7e14;
         }
 
         body {
-          width: 210mm;
-          min-height: 297mm;
-          margin: 0;
-          box-shadow: none;
-        }
-
-        .flyer-container {
-          min-height: 297mm;
-          padding: 15mm;
-        }
-
-        * {
-          transition: none !important;
-          box-shadow: none !important;
-        }
-      }
-
-      /* Ajustes responsivos */
-      @media (max-width: 768px) {
-        .header h1 {
-          font-size: 38px;
-        }
-        .header h2 {
-          font-size: 16px;
-        }
-        .blocks-container {
-          grid-template-columns: 1fr; /* Apila los bloques en pantallas más pequeñas */
-          gap: 20px;
-        }
-        .price-cta {
-            font-size: 20px;
-            padding: 12px;
-        }
-        .cta-button {
-            font-size: 18px;
-            padding: 10px 20px;
-        }
-        .footer-grid {
-            grid-template-columns: 1fr; /* Apila los elementos del pie de página en pantallas muy pequeñas */
-            text-align: center;
-        }
-        .footer-item {
-            justify-content: center; /* Centra los elementos del pie de página */
-        }
-        .footer-icon {
-            margin-right: 5px;
-        }
-        .whatsapp-float-button {
-            width: 50px;
-            height: 50px;
-            font-size: 24px;
-            bottom: 20px;
-            right: 20px;
-        }
-        .instructor-info {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: var(--light-bg);
             padding: 20px;
+            box-shadow: var(--shadow-medium);
+            border-radius: 12px;
         }
-        .instructor-info h3 {
-            font-size: 20px;
+        h1, h2, h3, h4 {
+            color: var(--primary-color);
+            margin-top: 30px;
+            margin-bottom: 15px;
         }
-        .instructor-info p {
-            font-size: 14px;
+        h1 {
+            text-align: center;
+            font-size: 2.8em;
+            border-bottom: 4px solid var(--primary-color);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
-      }
+        h2 {
+            font-size: 2em;
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        h2 .emoji {
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+        h3 {
+            font-size: 1.6em;
+            color: var(--text-color);
+            border-left: 6px solid var(--text-color);
+            padding-left: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        h3 .emoji {
+            margin-right: 8px;
+            font-size: 1em;
+        }
+        h4 {
+            font-size: 1.3em;
+            color: #555;
+            margin-bottom: 12px;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        ul {
+            list-style-type: none; /* Remove default bullets */
+            margin-left: 0;
+            padding-left: 0;
+            margin-bottom: 10px;
+        }
+        ul li {
+            position: relative;
+            padding-left: 25px; /* Space for custom bullet */
+            margin-bottom: 5px;
+        }
+        ul li::before {
+            content: '👉'; /* Custom bullet point */
+            position: absolute;
+            left: 0;
+            color: var(--accent-color); /* Emoji color */
+        }
+        ol {
+            list-style-type: decimal;
+            margin-left: 25px;
+            margin-bottom: 10px;
+        }
+        ol li {
+             margin-bottom: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: var(--shadow-medium);
+            border-radius: 8px;
+            overflow: hidden; /* For rounded corners to apply */
+        }
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 12px 15px;
+            text-align: left;
+            vertical-align: middle;
+        }
+        th {
+            background-color: #ecf0f1;
+            font-weight: bold;
+            color: var(--text-color);
+            text-transform: uppercase;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .highlight-box {
+            background-color: #e8f6f3;
+            padding: 18px;
+            border-left: 6px solid var(--success-color);
+            margin: 25px 0;
+            border-radius: 8px;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+        }
+        .highlight-box .emoji {
+            margin-right: 15px;
+            font-size: 1.5em;
+        }
+        .section-box {
+            background-color: var(--white-bg);
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow-light);
+        }
+        .role-box {
+            border: 1px dashed #95a5a6;
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: #fdfefe;
+            border-radius: 8px;
+        }
+        .activity-box {
+            background-color: var(--cubicle-diver-bg); /* Default, will be overridden by specific PAQ type */
+            border-left: 5px solid var(--secondary-color);
+            padding: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .activity-box.diver { border-left-color: var(--success-color); background-color: var(--cubicle-diver-bg); }
+        .activity-box.adicc { border-left-color: var(--warning-color); background-color: var(--cubicle-adicc-bg); }
+        .activity-box.perse { border-left-color: var(--primary-color); background-color: var(--cubicle-perse-bg); }
+
+        .warning {
+            color: var(--danger-color);
+            font-weight: bold;
+        }
+        .info {
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+        .tip {
+            color: var(--success-color);
+            font-style: italic;
+            display: flex;
+            align-items: center;
+        }
+        .tip .emoji {
+            margin-right: 8px;
+        }
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+        .checklist-item label {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            padding-left: 5px; /* Space between checkbox and text */
+        }
+        .checklist-item input[type="checkbox"] {
+            margin-right: 12px;
+            transform: scale(1.3);
+            flex-shrink: 0;
+        }
+        .checklist-item.checked label {
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+        .rotation-arrow {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin: 0 8px;
+        }
+        .group-A { color: var(--group-A-color); font-weight: bold; } /* Green */
+        .group-B { color: var(--group-B-color); font-weight: bold; } /* Blue */
+        .group-C { color: var(--group-C-color); font-weight: bold; } /* Orange */
+
+        .cubicle-Diver { background-color: var(--cubicle-diver-bg); } /* Light Cyan */
+        .cubicle-Adicc { background-color: var(--cubicle-adicc-bg); } /* Light Orange */
+        .cubicle-Perse { background-color: var(--cubicle-perse-bg); } /* Light Green */
+        .conferencista-cubicle { background-color: var(--conferencista-bg); font-weight: bold; } /* Light Blue Grey */
+
+        .time-breakdown {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+            border-radius: 5px;
+            overflow: hidden;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: var(--shadow-light);
+        }
+        .time-segment {
+            padding: 10px 15px;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        .charla-segment { background-color: var(--success-color); width: 58%; /* 7/12 */ }
+        .actividad-segment { background-color: var(--secondary-color); width: 33%; /* 4/12 */ }
+        .transicion-segment { background-color: var(--warning-color); width: 9%; /* 1/12 */ }
+
+        .flow-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px 0;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: var(--text-color);
+            flex-wrap: wrap;
+        }
+        .flow-box {
+            background-color: #e9f5ff;
+            border: 2px solid var(--secondary-color);
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 50px; /* Pill shape */
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            box-shadow: var(--shadow-light);
+        }
+        .flow-arrow {
+            font-size: 2em;
+            color: var(--accent-color);
+            margin: 0 5px;
+        }
+
+        .rotation-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0;
+            position: relative;
+        }
+        .rotation-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 3px dashed #95a5a6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.9em;
+            font-weight: bold;
+            color: #7f8c8d;
+            text-align: center;
+            position: relative;
+        }
+        .cubicle-label {
+            position: absolute;
+            background-color: var(--white-bg);
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            box-shadow: var(--shadow-light);
+            font-weight: bold;
+            transition: transform 0.2s ease-in-out;
+        }
+        .cubicle-label.diver { top: -20px; left: 50%; transform: translateX(-50%); background-color: var(--cubicle-diver-bg);}
+        .cubicle-label.adicc { right: -20px; top: 50%; transform: translateY(-50%); background-color: var(--cubicle-adicc-bg);}
+        .cubicle-label.perse { bottom: -20px; left: 50%; transform: translateX(-50%); background-color: var(--cubicle-perse-bg);}
+        .cubicle-label:hover {
+            transform: scale(1.05) translateX(-50%); /* Only for top/bottom */
+            cursor: pointer;
+        }
+        .cubicle-label.adicc:hover {
+             transform: scale(1.05) translateY(-50%); /* Only for right */
+        }
+
+
+        .group-legend {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+        .group-legend span {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 5px 10px;
+            border-radius: 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+        }
+
+        /* Collapsible Section Styling */
+        .collapsible-toggle {
+            cursor: pointer;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0;
+            transition: background-color 0.3s ease;
+        }
+        .collapsible-toggle:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        .collapsible-toggle .toggle-icon {
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+        }
+        .collapsible-toggle.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 10px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        .collapsible-content.active {
+            max-height: 500px; /* Adjust based on max content height */
+            padding: 10px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 { font-size: 2em; }
+            h2 { font-size: 1.5em; flex-direction: column; align-items: flex-start;}
+            h3 { font-size: 1.3em; }
+            .time-breakdown { width: 100%; flex-wrap: wrap;}
+            .time-segment { width: 100%; margin-bottom: 5px; }
+            .flow-diagram { flex-direction: column; }
+            .flow-arrow { transform: rotate(90deg); margin: 10px 0; }
+            .cubicle-label.diver, .cubicle-label.adicc, .cubicle-label.perse {
+                position: static;
+                transform: none;
+                margin: 5px auto;
+                width: fit-content;
+            }
+            .rotation-circle { border: none; height: auto; width: auto; flex-direction: column; }
+            .group-legend span { margin: 5px 0; display: block; }
+        }
+
+        /* Group path highlighting styles */
+        .path-highlight {
+            background-color: rgba(var(--highlight-rgb, 0, 0, 0), 0.2) !important;
+        }
+
     </style>
-  </head>
-  <body class="theme2">
-    <!-- === SELECTOR DE COLORES === -->
-    <!-- Botones de selección de color -->
-    <div class="color-selector-description">
-      Selecciona tu paleta de colores favorita
-    </div>
-    <div class="color-selector" role="toolbar" aria-label="Selector de paleta de colores">
-      <div class="color-option option1" onclick="document.body.className=''" title="Verde azulado" aria-label="Seleccionar tema verde azulado" tabindex="0"></div>
-      <div class="color-option option2" onclick="document.body.className='theme2'" title="Azul profundo" aria-label="Seleccionar tema azul profundo" tabindex="0"></div>
-      <div class="color-option option3" onclick="document.body.className='theme3'" title="Rojo vino" aria-label="Seleccionar tema rojo vino" tabindex="0"></div>
-    </div>
+</head>
+<body>
 
-    <!-- === CONTENIDO PRINCIPAL DEL FLYER === -->
-    <div class="flyer-container" role="main" aria-label="Flyer del curso Padres Conectados">
-      <div class="new-course-badge">Nuevo Curso</div>
+    <h1>🚀 ¡Plan Operativo: Evento Rotatorio de 2 Horas al Éxito! 🚀</h1>
 
-      <!-- === ENCABEZADO CON TÍTULO Y DESCRIPCIÓN === -->
-      <header class="header" role="banner">
-        <div class="header-logo">
-          <i class="bi bi-shield-check-fill"></i>
-        </div>
-        <h1>Padres Conectados</h1>
-        <h2>Aprende a implementar protección digital efectiva, comunicación asertiva y protocolos de respuesta ante crisis tecnológicas</h2>
-      </header>
+    <div class="section-box">
+        <h2><span class="emoji">📝</span> 1. Resumen Ejecutivo: ¿Qué haremos y por qué?</h2>
+        <p>Esta guía detalla el plan óptimo para un evento de 2 horas con tres grupos de niños, asegurando que todos reciban las 3 microcharlas principales ("Diversión", "Adicción", "Persecución") impartidas por un único conferencista, con actividades variadas y con propósito en cada rotación, <strong>explicadas y dirigidas por los facilitadores</strong>. Nuestro objetivo es una experiencia fluida y enriquecedora para todos. ✨</p>
 
-      <!-- === IMAGEN PRINCIPAL === -->
-      <div class="main-image">
-        <img src="https://www.commonsensemedia.org/sites/default/files/styles/ratio_16_9_large/public/blog/2020-covid19-latino-blog.jpg" alt="Familia latinoamericana usando tecnología durante la pandemia">
-      </div>
-
-      <div class="section-divider"></div>
-
-      <!-- === BLOQUES DE INFORMACIÓN DEL CURSO === -->
-      <div class="blocks-container" role="region" aria-label="Contenido del curso">
-        <!-- === BLOQUE 1: UNIVERSO DIGITAL === -->
-        <div class="block">
-          <div class="block-header">
-            <div class="block-icon">
-              <i class="bi bi-globe2"></i>
+        <div class="highlight-box">
+            <span class="emoji">⏰</span> <strong>Formato Clave: Bloques de 12 minutos</strong>
+            <p style="margin-top: 10px; margin-bottom: 0;">Cada segmento de 12 minutos se distribuye así:</p>
+            <div class="time-breakdown">
+                <div class="time-segment charla-segment">7' Charla (Conferencista)</div>
+                <div class="time-segment actividad-segment">4' Actividad (Facilitador)</div>
+                <div class="time-segment transicion-segment">1' Transición</div>
             </div>
-            <h3 class="block-title">Universo digital</h3>
-          </div>
-          <div class="block-content">
-            <p>
-              <strong>Comprende el entorno digital en el que se mueven tus hijos.</strong>
-              Explora cómo usan internet niños y adolescentes en Colombia, qué plataformas prefieren y cuáles son los principales riesgos a los que están expuestos. Aprende a identificar el origen de sus conductas para  acompañarlos con criterio
-            </p>
-          </div>
         </div>
 
-        <!-- === BLOQUE 2: ESCUDO DIGITAL === -->
-        <div class="block">
-          <div class="block-header">
-            <div class="block-icon">
-              <i class="bi bi-shield-check"></i>
-            </div>
-            <h3 class="block-title">Escudo digital</h3>
-          </div>
-          <div class="block-content">
-            <p>
-              <strong>Aprende a proteger a tu familia en el mundo digital.</strong>
-              Conoce herramientas de control parental disponibles en celulares, computadores y redes domésticas. Establece límites saludables, filtros de contenido y monitoreo sin invadir su privacidad.
-            </p>
-          </div>
+        <p class="info">
+            <span class="emoji">🔄</span> <strong>Rotación Fija:</strong> Los grupos siempre rotarán en sentido horario:
+        </p>
+        <div class="flow-diagram">
+            <div class="flow-box">Diver (Diversión) 🎉</div>
+            <span class="flow-arrow">➔</span>
+            <div class="flow-box">Adicc (Adicción) 🧠</div>
+            <span class="flow-arrow">➔</span>
+            <div class="flow-box">Perse (Persecución) 🛡️</div>
+            <span class="flow-arrow">➔</span>
+            <div class="flow-box">Diver (Inicio) 🎉</div>
         </div>
-
-        <!-- === BLOQUE 3: COMUNICACIÓN === -->
-        <div class="block">
-          <div class="block-header">
-            <div class="block-icon">
-              <i class="bi bi-chat-dots"></i>
-            </div>
-            <h3 class="block-title">Comunicación</h3>
-          </div>
-          <div class="block-content">
-            <p>
-              <strong>Fortalece el diálogo en casa frente a la tecnología.</strong>
-              Aprende estrategias prácticas para hablar con tus hijos sobre lo que hacen en línea, establecer acuerdos familiares claros y fomentar la autorregulación digital desde la confianza, no desde el miedo.
-            </p>
-          </div>
-        </div>
-
-        <!-- === BLOQUE 4: CRISIS Y RESPUESTA === -->
-        <div class="block">
-          <div class="block-header">
-            <div class="block-icon">
-              <i class="bi bi-exclamation-triangle"></i>
-            </div>
-            <h3 class="block-title">Crisis y respuesta</h3>
-          </div>
-          <div class="block-content">
-            <p>
-              <strong>Sabrás cómo actuar si algo grave sucede en internet.</strong>
-              Identifica señales de alarma en el comportamiento digital, conoce rutas de atención en Colombia, aprende a preservar evidencias y accede a recursos de apoyo psicológico y legal en caso de emergencia.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="section-divider"></div>
-
-      <!-- === SECCIÓN DE PRECIO Y INSCRIPCIÓN === -->
-      <div class="price-cta" id="pricing-info">
-        $130.000 COP por hogar
-        <span class="limited-seats">Cupos limitados</span>
-        <br>
-        <a href="https://forms.gle/RxWC7uQrrBaHRgTr6" class="cta-button" aria-describedby="pricing-info" target="_blank">Inscríbete ahora</a>
-      </div>
-
-      <div class="section-divider"></div>
-
-      <!-- === SECCIÓN DEL INSTRUCTOR === -->
-      <div class="instructor-info" role="region" aria-label="Información del Instructor">
-        <h3>El curso será impartido por:</h3>
-        <h4>Alejandro Carvajal</h4>
-        <p>Fundador de la <strong>Agencia de Inteligencia Artificial al Ciudadano</strong> e implementador de proyectos tecnológicos a nivel Latinoamérica.</p>
-      </div>
-
-      <div class="section-divider"></div>
-
-      <!-- === PIE DE PÁGINA CON INFORMACIÓN DE CONTACTO === -->
-      <footer class="footer" role="contentinfo">
-        <div class="footer-grid">
-          <div>
-            <div class="footer-item">
-              <div class="footer-icon"><i class="bi bi-calendar-event"></i></div>
-              <div>Fecha y hora: Se definirá por votación en el formulario de inscripción.</div>
-            </div>
-            <div class="footer-item">
-              <div class="footer-icon"><i class="bi bi-clock"></i></div>
-              <div>Duración: 4 horas</div>
-            </div>
-            <div class="footer-item">
-              <div class="footer-icon"><i class="bi bi-laptop"></i></div>
-              <div>Modalidad: Virtual</div>
-            </div>
-            <div class="footer-item">
-              <div class="footer-icon"><i class="bi bi-file-earmark-pdf"></i></div>
-              <div>Incluye: Guía completa</div>
-            </div>
-          </div>
-
-          <div>
-            <div class="footer-item">
-              <div class="footer-icon"><i class="bi bi-envelope"></i></div>
-              <div>Email: <a href="mailto:info@mindtechconsulting.com">info@mindtechconsulting.com</a></div>
-            </div>
-          </div>
-        </div>
-      </footer>
+        <p style="text-align: center; margin-top: 10px;">Al sonar la trompeta 🎺, todos los grupos avanzan una estación. ¡Mantén la energía!</p>
     </div>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/573104754963" class="whatsapp-float-button" target="_blank" rel="noopener noreferrer" aria-label="Enviar mensaje por WhatsApp">
-        <i class="bi bi-whatsapp"></i>
-    </a>
+    <div class="section-box">
+        <h2><span class="emoji">👥</span> 2. Roles y Responsabilidades del Equipo</h2>
+        <div class="role-box">
+            <h3><span class="emoji">🎤</span> Conferencista (1 Persona)</h3>
+            <ul>
+                <li>Imparte 3 rondas de charlas (primero todos en "Diver", luego en "Adicc", luego en "Perse").</li>
+                <li>En cada bloque: <strong>7 minutos de charla central</strong>.</li>
+                <li>Introduce brevemente la micro-actividad (15-30 segundos) y <strong>pasa el turno al facilitador del cubículo para que la explique y dirija</strong>.</li>
+            </ul>
+        </div>
+        <div class="role-box">
+            <h3><span class="emoji">👨‍🏫</span> Facilitadores de Estación (3 Personas: Uno por Cubículo Diver, Adicc, Perse)</h3>
+            <ul>
+                <li>Reciben a cada grupo que llega a su cubículo, apoyan el orden, y son los encargados de <strong>explicar y dirigir</strong> la micro-actividad de 4 minutos.</li>
+                <li>Deben ejecutar la actividad correspondiente al "Paquete" del bloque (PAQ-1 para bloques 1-3, PAQ-2 para 4-6, PAQ-3 para 7-9).</li>
+                <li>Realizan un cierre exprés (20-30 segundos) con una pregunta de reflexión y un aplauso.</li>
+                <li>Controlan los materiales y el tiempo local de su actividad.</li>
+            </ul>
+        </div>
+        <div class="role-box">
+            <h3><span class="emoji">⏱️</span> Timekeeper (1 Persona)</h3>
+            <ul>
+                <li>Usa un cronómetro con 3 señales claras por cada bloque de 12 minutos:
+                    <ul>
+                        <li><strong>Minuto 7:00:</strong> <span class="info">🔔 Campanita</span> ("Cierra charla", conferencista introduce actividad).</li>
+                        <li><strong>Minuto 11:00:</strong> <span class="warning">🗣️ Aviso sonoro</span> ("Transición: queda 1 minuto").</li>
+                        <li><strong>Minuto 12:00:</strong> <span class="info">🎺 Trompeta</span> (¡Tiempo de rotar Diver<span class="rotation-arrow">➔</span>Adicc<span class="rotation-arrow">➔</span>Perse!).</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="role-box">
+            <h3><span class="emoji">🏃</span> Runner (1 Persona)</h3>
+            <ul>
+                <li>Encargado de suministros, agua, resolución de emergencias menores y apoyo logístico a los facilitadores.</li>
+            </ul>
+        </div>
+        <div class="role-box">
+            <h3><span class="emoji">🎯</span> Coordinación General (1 Persona)</h3>
+            <ul>
+                <li>Supervisa el cumplimiento del flujo, asegura el silencio en los pasillos, visibilidad de las señales y que las entradas/salidas estén despejadas.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section-box">
+        <h2><span class="emoji">🗓️</span> 3. Cronograma Total del Evento (2:00 horas exactas)</h2>
+        <p>El evento se dividirá en una bienvenida, 9 bloques de actividad y un cierre. ¡Cada minuto cuenta! ⏳</p>
+        <ul>
+            <li><strong>0:00 – 0:04 (4 minutos):</strong> Bienvenida, explicación de reglas y rutas. 👋</li>
+            <li><strong>0:04 – 1:52 (108 minutos):</strong> 9 bloques de 12 minutos cada uno (actividades y charlas). 🔄</li>
+            <li><strong>1:52 – 2:00 (8 minutos):</strong> Cierre, compromisos, recordatorios y foto grupal. 📸</li>
+        </ul>
+    </div>
+
+    <div class="section-box">
+        <h2><span class="emoji">🗺️</span> 4. Mapa de Rotación (Sentido de Reloj Diver<span class="rotation-arrow">➔</span>Adicc<span class="rotation-arrow">➔</span>Perse)</h2>
+        <p>Este es el itinerario detallado minuto a minuto. El conferencista se moverá entre cubículos a lo largo de las rondas para dar las charlas.</p>
+        <p class="info"><span class="emoji">🧑‍🤝‍🧑</span> <strong>Grupos:</strong></p>
+        <ul>
+            <li><strong class="group-A" data-group="A">Grupo A:</strong> 7–10 años 🍏</li>
+            <li><strong class="group-B" data-group="B">Grupo B:</strong> 10–13 años 📘</li>
+            <li><strong class="group-C" data-group="C">Grupo C:</strong> 14–18 años 🧡</li>
+        </ul>
+        <p class="info"><span class="emoji">📍</span> <strong>Cubículos/Temas:</strong></p>
+        <ul>
+            <li><strong>Diver:</strong> Diversión 🎉</li>
+            <li><strong>Adicc:</strong> Adicción 🧠</li>
+            <li><strong>Perse:</strong> Persecución 🛡️</li>
+        </ul>
+
+        <div class="rotation-visual">
+            <div class="rotation-circle">
+                <span class="cubicle-label diver">Diver 🎉</span>
+                <span class="cubicle-label adicc">Adicc 🧠</span>
+                <span class="cubicle-label perse">Perse 🛡️</span>
+                Rotación Horaria
+                <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3em; color: var(--accent-color);">↻</span>
+            </div>
+            <div class="group-legend">
+                <span class="group-A">Grupo A: <span class="group-A">🍏</span></span>
+                <span class="group-B">Grupo B: <span class="group-B">📘</span></span>
+                <span class="group-C">Grupo C: <span class="group-C">🧡</span></span>
+            </div>
+        </div>
+
+
+        <h3>Línea de Tiempo Detallada (Minuto Exacto por Bloque)</h3>
+        <table id="itinerary-table">
+            <thead>
+                <tr>
+                    <th>Bloque</th>
+                    <th>Tiempo (min.)</th>
+                    <th>Conferencista en…</th>
+                    <th>Grupo A (7–10) <span class="group-A">🍏</span></th>
+                    <th>Grupo B (10–13) <span class="group-B">📘</span></th>
+                    <th>Grupo C (14–18) <span class="group-C">🧡</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Bienvenida</td><td>0:00–0:04</td><td>—</td><td>Orientación</td><td>Orientación</td><td>Orientación</td></tr>
+                <tr data-block="1"><td>1</td><td>0:04–0:16</td><td class="conferencista-cubicle">Diver 🎉</td><td class="cubicle-Diver" data-group-loc="A"><strong>Diver</strong></td><td data-group-loc="B">Adicc</td><td data-group-loc="C">Perse</td></tr>
+                <tr data-block="2"><td>2</td><td>0:16–0:28</td><td class="conferencista-cubicle">Diver 🎉</td><td data-group-loc="A">Adicc</td><td class="cubicle-Diver" data-group-loc="B"><strong>Diver</strong></td><td data-group-loc="C">Perse</td></tr>
+                <tr data-block="3"><td>3</td><td>0:28–0:40</td><td class="conferencista-cubicle">Diver 🎉</td><td data-group-loc="A">Perse</td><td data-group-loc="B">Adicc</td><td class="cubicle-Diver" data-group-loc="C"><strong>Diver</strong></td></tr>
+                <tr data-block="4"><td>4</td><td>0:40–0:52</td><td class="conferencista-cubicle">Adicc 🧠</td><td class="cubicle-Adicc" data-group-loc="A"><strong>Adicc</strong></td><td data-group-loc="B">Perse</td><td data-group-loc="C">Diver</td></tr>
+                <tr data-block="5"><td>5</td><td>0:52–1:04</td><td class="conferencista-cubicle">Adicc 🧠</td><td data-group-loc="A">Perse</td><td class="cubicle-Adicc" data-group-loc="B"><strong>Adicc</strong></td><td data-group-loc="C">Diver</td></tr>
+                <tr data-block="6"><td>6</td><td>1:04–1:16</td><td class="conferencista-cubicle">Adicc 🧠</td><td data-group-loc="A">Diver</td><td data-group-loc="B">Perse</td><td class="cubicle-Adicc" data-group-loc="C"><strong>Adicc</strong></td></tr>
+                <tr data-block="7"><td>7</td><td>1:16–1:28</td><td class="conferencista-cubicle">Perse 🛡️</td><td class="cubicle-Perse" data-group-loc="A"><strong>Perse</strong></td><td data-group-loc="B">Diver</td><td data-group-loc="C">Adicc</td></tr>
+                <tr data-block="8"><td>8</td><td>1:28–1:40</td><td class="conferencista-cubicle">Perse 🛡️</td><td data-group-loc="A">Diver</td><td class="cubicle-Perse" data-group-loc="B"><strong>Perse</strong></td><td data-group-loc="C">Adicc</td></tr>
+                <tr data-block="9"><td>9</td><td>1:40–1:52</td><td class="conferencista-cubicle">Perse 🛡️</td><td data-group-loc="A">Adicc</td><td data-group-loc="B">Diver</td><td class="cubicle-Perse" data-group-loc="C"><strong>Perse</strong></td></tr>
+                <tr><td>Cierre</td><td>1:52–2:00</td><td>—</td><td>Compromisos</td><td>Compromisos</td><td>Compromisos</td></tr>
+            </tbody>
+        </table>
+        <p class="info" style="text-align: center;"><strong>Regla Universal:</strong> Al sonar la trompeta 🎺 (al minuto 12:00 de cada bloque), todos los grupos avanzan una estación en sentido horario. ¡Fluidez total! 🌊</p>
+
+        <h3>Itinerario por Grupo (Para pegar en la pared de cada estación)</h3>
+        <p class="tip"><span class="emoji">🍏</span> <strong class="group-A" data-group-id="A">Grupo A (7–10 años):</strong> Diver(1) <span class="rotation-arrow">➔</span> Adicc(2) <span class="rotation-arrow">➔</span> Perse(3) <span class="rotation-arrow">➔</span> Adicc(4) <span class="rotation-arrow">➔</span> Perse(5) <span class="rotation-arrow">➔</span> Diver(6) <span class="rotation-arrow">➔</span> Perse(7) <span class="rotation-arrow">➔</span> Diver(8) <span class="rotation-arrow">➔</span> Adicc(9)</p>
+        <p class="tip"><span class="emoji">📘</span> <strong class="group-B" data-group-id="B">Grupo B (10–13 años):</strong> Adicc(1) <span class="rotation-arrow">➔</span> Diver(2) <span class="rotation-arrow">➔</span> Adicc(3) <span class="rotation-arrow">➔</span> Perse(4) <span class="rotation-arrow">➔</span> Adicc(5) <span class="rotation-arrow">➔</span> Perse(6) <span class="rotation-arrow">➔</span> Diver(7) <span class="rotation-arrow">➔</span> Perse(8) <span class="rotation-arrow">➔</span> Diver(9)</p>
+        <p class="tip"><span class="emoji">🧡</span> <strong class="group-C" data-group-id="C">Grupo C (14–18 años):</strong> Perse(1) <span class="rotation-arrow">➔</span> Perse(2) <span class="rotation-arrow">➔</span> Diver(3) <span class="rotation-arrow">➔</span> Diver(4) <span class="rotation-arrow">➔</span> Diver(5) <span class="rotation-arrow">➔</span> Adicc(6) <span class="rotation-arrow">➔</span> Adicc(7) <span class="rotation-arrow">➔</span> Adicc(8) <span class="rotation-arrow">➔</span> Perse(9)</p>
+        <p class="tip"><span class="emoji">💡</span> <em>(Los paréntesis indican el número de bloque en el cronograma general. ¡Así nunca se pierden!)</em></p>
+    </div>
+
+    <div class="section-box">
+        <h2><span class="emoji">🗣️</span> 5. Guion del Conferencista (7 minutos por Charla)</h2>
+        <p>Estructura recomendada para mantener el tiempo y la efectividad. ¡Sé conciso y claro!</p>
+        <h4><span class="emoji">⏱️</span> Estructura 2–3–2 (minutos aproximados)</h4>
+        <ol>
+            <li>
+                <strong>Inicio (2 minutos): ✨ Conexión y Objetivo</strong>
+                <ul>
+                    <li>Conexión rápida con el grupo (pregunta abierta o mini dinámica corporal de 15 segundos).</li>
+                    <li>Establecer el objetivo claro de la charla (una frase potente).</li>
+                    <li>"Hoy veremos X, luego haremos una mini-actividad y rotamos con la trompeta."</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Desarrollo (3 minutos): 🧠 Ideas Clave y Ejemplo</strong>
+                <ul>
+                    <li>Presentar 2-3 ideas clave (en frases cortas y concisas).</li>
+                    <li>Utilizar 1 ejemplo o mini-historia aplicable a la edad del grupo (ajustar tono).</li>
+                    <li>Realizar 1 pregunta reflexiva (ej. "manos arriba/abajo" para interactuar).</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Cierre e Introducción a la Actividad (2 minutos): 🤝 Paso al Facilitador</strong>
+                <ul>
+                    <li>Recapitulación en 1 frase.</li>
+                    <li>"Ahora, el facilitador <span class="info">[Nombre del Facilitador]</span> les explicará y guiará en la micro-actividad de <span class="info">[nombre de la actividad]</span> en este cubículo <span class="info">[Diver/Adicc/Perse]</span>. ¡Tienen 4 minutos! Cuando escuchen la campanita 🔔 quedará 1 minuto para la transición."</li>
+                    <li>Dar una señal visual al facilitador (ej. pulgar arriba 👍) y nombrarlo: "Con <span class="info">[Nombre del Facilitador]</span>".</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <div class="section-box">
+        <h2><span class="emoji">💡</span> 6. Micro-Actividades Exprés (4 minutos) y Cierres (20–30 segundos)</h2>
+        <p class="warning"><span class="emoji">⚠️</span> <strong>¡ATENCIÓN FACILITADORES!</strong> Hay 3 paquetes (PAQ-1, PAQ-2, PAQ-3) por cubículo para asegurar la variedad de actividades. Deben estar atentos a qué PAQUETE aplicar según el bloque.</p>
+        <p style="margin-top: -10px;">¡Así ningún grupo repite actividad! ✅ Para ver los detalles de cada PAQ, haz clic en el título.</p>
+        <ul>
+            <li><strong>Bloques 1–3:</strong> Usar <strong class="info">PAQ-1</strong> (Primer recorrido por el tema)</li>
+            <li><strong>Bloques 4–6:</strong> Usar <strong class="info">PAQ-2</strong> (Segundo encuentro con el tema, actividad diferente)</li>
+            <li><strong>Bloques 7–9:</strong> Usar <strong class="info">PAQ-3</strong> (Tercer encuentro, nueva actividad)</li>
+        </ul>
+        <p class="tip"><span class="emoji">🎯</span> <em>Ajusta el subcontenido de cada actividad según la edad del grupo presente en tu cubículo para maximizar el impacto.</em></p>
+
+        <h3><span class="emoji">🎉</span> 6.1. Cubículo: Diversión (Diver)</h3>
+        <p><strong>Objetivo general:</strong> Disfrutar con límites, juego limpio, cooperación. ¡A reír y aprender!</p>
+        <div class="activity-box diver">
+            <h4 class="collapsible-toggle"><span class="emoji">🎁</span> PAQ Diver-1 (Bloques 1–3) <span class="toggle-icon">▼</span></h4>
+            <div class="collapsible-content active">
+                <ul>
+                    <li><strong>7–10 años: Mímica Semáforo.</strong> 🚦 Clasifica acciones divertidas en verde/amarillo/rojo y actúa 2.</li>
+                    <li><strong>10–13 años: Adivina en 3 pistas (Ocio Sano).</strong> 🕵️‍♀️ Descifra hábitos de ocio positivo con 3 claves.</li>
+                    <li><strong>14–18 años: Mini-Debate 60’’.</strong> 🗣️ ¡Defiende tu postura en un dilema de ocio en un minuto!</li>
+                </ul>
+            </div>
+        </div>
+        <div class="activity-box diver">
+            <h4 class="collapsible-toggle"><span class="emoji">🌟</span> PAQ Diver-2 (Bloques 4–6) <span class="toggle-icon">▶</span></h4>
+            <div class="collapsible-content">
+                <ul>
+                    <li><strong>7–10 años: Rally 2 Pruebas.</strong> 🏁 Zig-zag y torre de vasos: ¡Trabajo en equipo!</li>
+                    <li><strong>10–13 años: Storyboard 4 Viñetas.</strong> ✍️ Crea una mini-historia visual sobre amistad sana.</li>
+                    <li><strong>14–18 años: Plan de Ocio 3x1.</strong> 📝 Diseña 3 ideas de ocio y 1 límite claro para cada una.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="activity-box diver">
+            <h4 class="collapsible-toggle"><span class="emoji">✨</span> PAQ Diver-3 (Bloques 7–9) <span class="toggle-icon">▶</span></h4>
+            <div class="collapsible-content">
+                <ul>
+                    <li><strong>7–10 años: Stop-Dance Juego Limpio.</strong> 🕺💃 Baila y para; aplaude la deportividad.</li>
+                    <li><strong>10–13 años: Semáforo de Bromas.</strong> 😂 Clasifica bromas según su impacto en los demás.</li>
+                    <li><strong>14–18 años: Caso Relámpago.</strong> ⚡ Presenta un caso y toma una decisión justificada en 90 segundos.</li>
+                </ul>
+            </div>
+        </div>
+        <p class="highlight-box"><span class="emoji">✅</span> <strong>Cierre Sugerido (20–30’’):</strong> "¿Qué harás distinto para que la diversión sea sana para ti y para otros? Levanta 1 dedo con tu compromiso."</p>
+
+        <h3><span class="emoji">🧠</span> 6.2. Cubículo: Adicción (Adicc)</h3>
+        <p><strong>Objetivo general:</strong> Reconocer hábitos, establecer límites y explorar reemplazos saludables. ¡Toma el control! 💪</p>
+        <div class="activity-box adicc">
+            <h4 class="collapsible-toggle"><span class="emoji">🎁</span> PAQ Adicc-1 (Bloques 1–3) <span class="toggle-icon">▼</span></h4>
+            <div class="collapsible-content active">
+                <ul>
+                    <li><strong>7–10 años: Mi Reloj de Pausa.</strong> ⏰ Dibuja 1 pausa saludable para tu día.</li>
+                    <li><strong>10–13 años: Mitos vs. Verdad.</strong> 🧐 Desmiente mitos sobre hábitos con 4 tarjetas.</li>
+                    <li><strong>14–18 años: TRR (Trigger–Rutina–Recompensa) de 1 Hábito.</strong> 📊 Identifica los componentes de un hábito.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="activity-box adicc">
+            <h4 class="collapsible-toggle"><span class="emoji">🌟</span> PAQ Adicc-2 (Bloques 4–6) <span class="toggle-icon">▶</span></h4>
+            <div class="collapsible-content">
+                <ul>
+                    <li><strong>7–10 años: Respira 4–4–4 + Estiro 20’’.</strong> 🧘 Practica una micro-pausa de bienestar.</li>
+                    <li><strong>10–13 años: Mapa de Apps.</strong> 🗺️ Lista 3 acciones para limitar el uso de tus apps favoritas.</li>
+                    <li><strong>14–18 años: Mini-Detox 24h.</strong> 🚫 Diseña una regla + un sustituto para un mini-detox digital.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="activity-box adicc">
+            <h4 class="collapsible-toggle"><span class="emoji">✨</span> PAQ Adicc-3 (Bloques 7–9) <span class="toggle-icon">▶</span></h4>
+            <div class="collapsible-content">
+                <ul>
+                    <li><strong>7–10 años: Semáforo de Pantallas.</strong> 📱 Clasifica 3 ejemplos de uso de pantallas en verde/amarillo/rojo.</li>
+                    <li><strong>10–13 años: Pacto 7 Días.</strong> 🤝 Establece 1 meta medible para 7 días, ¿cuándo y cómo la lograrán?</li>
+                    <li><strong>14–18 años: Role-Play Presión de Pares.</strong> 🎭 Escenifica una respuesta a la presión de grupo.</li>
+                </ul>
+            </div>
+        </div>
+        <p class="highlight-box"><span class="emoji">✅</span> <strong>Cierre Sugerido (20–30’’):</strong> "Di en voz baja tu 1 límite de esta semana. Tócate el reloj/pulsera para recordarlo."</p>
+
+        <h3><span class="emoji">🛡️</span> 6.3. Cubículo: Persecución (Perse) (hostigamiento/bullying/resiliencia; adapta a tu enfoque)</h3>
+        <p><strong>Objetivo general:</strong> Pedir ayuda, protegerse, responder con sabiduría y evidencia. ¡Sé un superhéroe de tu propia historia! 🦸‍♀️</p>
+        <div class="activity-box perse">
+            <h4 class="collapsible-toggle"><span class="emoji">🎁</span> PAQ Perse-1 (Bloques 1–3) <span class="toggle-icon">▼</span></h4>
+            <div class="collapsible-content active">
+                <ul>
+                    <li><strong>7–10 años: Títere-Frase: "¡Alto! Voy a decirlo a…".</strong> 🎭 Practica con títeres cómo pedir ayuda.</li>
+                    <li><strong>10–13 años: Ruta de Reporte.</strong> 🧭 Identifica a quién, cómo y cuándo reportar una situación difícil.</li>
+                    <li><strong>14–18 años: Caso en Redes.</strong> 📸 Analiza un caso de cyberbullying: qué evidenciar, a quién reportar.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="activity-box perse">
+            <h4 class="collapsible-toggle"><span class="emoji">🌟</span> PAQ Perse-2 (Bloques 4–6) <span class="toggle-icon">▶</span></h4>
+            <div class="collapsible-content">
+                <ul>
+                    <li><strong>7–10 años: Escudo de Apoyo.</strong> 🤝 Nombra 2 personas clave en quienes confías para pedir ayuda.</li>
+                    <li><strong>10–13 años: Observador Valiente.</strong> 🦸 Discute 1 forma segura de intervenir si ves a alguien en apuros.</li>
+                    <li><strong>14–18 años: Plan 3 Capas.</strong> 🗺️ Diseña un plan de respuesta en 3 niveles: personal, con pares, con adulto responsable.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="activity-box perse">
+            <h4 class="collapsible-toggle"><span class="emoji">✨</span> PAQ Perse-3 (Bloques 7–9) <span class="toggle-icon">▶</span></h4>
+            <div class="collapsible-content">
+                <ul>
+                    <li><strong>7–10 años: Semáforo de Situaciones.</strong> 🚥 Clasifica situaciones difíciles en verde/amarillo/rojo.</li>
+                    <li><strong>10–13 años: Diario 3x2.</strong> ✍️ Escribe 3 cosas que te afectan y 2 fortalezas personales.</li>
+                    <li><strong>14–18 años: Anclajes.</strong> ⚓ Identifica un verso, frase o contacto de emergencia que te dé fuerza.</li>
+                </ul>
+            </div>
+        </div>
+        <p class="highlight-box"><span class="emoji">✅</span> <strong>Cierre Sugerido (20–30’’):</strong> "¿Cuál será tu primer paso si ves o vives una situación injusta? Señálalo con el pulgar."</p>
+    </div>
+
+    <div class="section-box">
+        <h2><span class="emoji">📍</span> 7. Señalética y Orden de la Sala</h2>
+        <p>¡Una buena señalización garantiza un flujo perfecto!</p>
+        <ul>
+            <li><strong>Rótulos Grandes de Cubículos:</strong> "Diver 🎉", "Adicc 🧠", "Perse 🛡️" deben ser visibles a 10 metros de distancia.</li>
+            <li><strong>Flechas de Color:</strong> ➡️ En paredes/suelo indicando claramente la ruta de rotación (Diver<span class="rotation-arrow">➔</span>Adicc<span class="rotation-arrow">➔</span>Perse). ¡Sigue el camino!</li>
+            <li><strong>Identificación de Grupos:</strong> 🏷️ Brazaletes o tarjetas por grupo: <strong class="group-A">Grupo A (verde 🍏)</strong>, <strong class="group-B">Grupo B (azul 📘)</strong>, <strong class="group-C">Grupo C (naranja 🧡)</strong>.</li>
+            <li><strong>Puntos de Espera:</strong> 🟠 Círculos o marcas en el piso para que cada grupo se forme rápidamente (en 10-15 segundos) al llegar a una estación.</li>
+            <li><strong>Zona Tampón:</strong> Un espacio de 2-3 m² por cubículo para grupos que lleguen un minuto antes. ¡No hay apuros!</li>
+        </ul>
+    </div>
+
+    <div class="section-box">
+        <h2><span class="emoji">🛠️</span> 8. Materiales (por Cubículo) y Logística</h2>
+        <p class="info"><strong>Materiales Comunes a Todas las Estaciones:</strong></p>
+        <ul>
+            <li>Cronómetro o celular en modo avión (solo para el timekeeper y facilitadores). ⏱️</li>
+            <li>Campanita pequeña (para el timekeeper). 🔔</li>
+            <li>Plumones 🖊️, hojas A5/A4 📄, masking tape 🩹.</li>
+            <li>Stickers de colores (rojo/amarillo/verde). 🔴🟡🟢</li>
+            <li>Tarjetas plastificadas para "semáforos", "mitos/verdades", "casos". 🃏</li>
+            <li>6 vasos plásticos (para rally) 🥤, toallitas, agua. 💧</li>
+        </ul>
+        <h4>Materiales Específicos por Cubículo:</h4>
+        <ul>
+            <li><strong>Diver 🎉:</strong> Tarjetas de mímica/bromas/casos, música breve para stop-dance (opcional) 🎶, conos o cinta para zig-zag.</li>
+            <li><strong>Adicc 🧠:</strong> Tarjetas TRR, plantillas de reloj/plan, hojas de pacto, hojas "Mapa de apps" (con 3 casillas: notificaciones, tiempo, horarios).</li>
+            <li><strong>Perse 🛡️:</strong> Títeres simples (papel o calcetines) 🎭, tarjetas "semáforo de situaciones", plantillas "ruta de reporte", "escudo de apoyo", "plan 3 capas".</li>
+        </ul>
+        <p class="tip"><span class="emoji">🏃</span> <strong>Runner:</strong> Debe reponer materiales cada 3 bloques (después de PAQ-1 y PAQ-2) para asegurar el flujo continuo. ¡Siempre listos! 💪</p>
+    </div>
+
+    <div class="section-box">
+        <h2><span class="emoji">🗣️</span> 9. Manejo de Tiempos y Señales (Disciplina Positiva)</h2>
+        <p>¡La sincronización es clave para el éxito!</p>
+        <ul>
+            <li><strong>Silencio en Pasillos:</strong> Los facilitadores deben esperar a que el conferencista termine su introducción a la actividad antes de iniciar. 🤫</li>
+            <li><strong>Señal de Mano para Atención:</strong> Mano arriba ✋ = silencio inmediato y atención.</li>
+            <li><strong>Cuenta Regresiva Visible:</strong> "3–2–1" para la transición de 1 minuto. ¡A prepararse!</li>
+            <li><strong>Llegadas Tarde:</strong> Los niños que lleguen tarde se integran al círculo discretamente; la explicación NO se reinicia. 🚶‍♂️➡️➡️</li>
+        </ul>
+    </div>
+
+    <div class="section-box">
+        <h2><span class="emoji">🚨</span> 10. Contingencias y Seguridad</h2>
+        <p>Siempre preparados para cualquier situación. ¡La seguridad primero! 🛡️</p>
+        <ul>
+            <li><strong>Aforo Grande (>18 niños por grupo):</strong> Dividir el grupo en 2 subgrupos y duplicar el material; NO ampliar el tiempo. ¡Más manos, mismo tiempo! 🤝</li>
+            <li><strong>Ruido/Eco:</strong> El facilitador debe acercar al grupo en semicírculo, proyectando la voz a 1-2 metros de distancia para una mejor escucha. 👂</li>
+            <li><strong>Material Agotado:</strong> Usar alternativas creativas (papel en blanco, gestos, comunicación oral). ¡Improvisa con ingenio! 🎨</li>
+            <li><strong>Incidencias (Caídas, Llanto):</strong> El facilitador levanta la mano discretamente ✋ → el Runner acude; el resto del evento continúa con calma. Mantén la serenidad.</li>
+            <li><strong>Baño:</strong> Solo durante las transiciones y con un acompañante asignado (si aplica según las normas del lugar y la edad). 🚽➡️🚶‍♀️</li>
+        </ul>
+    </div>
+
+    <div class="section-box">
+        <h2><span class="emoji">📝</span> 11. Mini-Guiones por Edad (para facilitar el tono)</h2>
+        <p>¡Adapta tu lenguaje para conectar mejor con cada grupo!</p>
+        <ul>
+            <li><strong>7–10 años:</strong> Lenguaje simple, ejemplos cotidianos, 1 consigna por vez, mucho gesto y movimiento. ¡Diversión garantizada! 🌟</li>
+            <li><strong>10–13 años:</strong> Retos cortos, preguntas "sí/no + por qué breve", roles y uso de tarjetas interactivas. ¡Fomenta la participación! 💬</li>
+            <li><strong>14–18 años:</strong> Dilemas, decisiones en 60-90 segundos, planificación personal, interacción breve entre pares. ¡Invita a la reflexión! 🤔</li>
+        </ul>
+    </div>
+
+    <div class="section-box">
+        <h2><span class="emoji">📊</span> 12. Evaluación Rápida (sin interrumpir el flujo)</h2>
+        <p>¡Comentarios instantáneos para mejorar y celebrar!</p>
+        <ul>
+            <li><strong>Pulgar Arriba/Medio/Abajo:</strong> Al final de cada micro-actividad, pedir a los niños que valoren rápidamente. 👍 neutral 👎</li>
+            <li><strong>Tarjeta "Salida":</strong> Al cierre del evento, pedir a cada niño que escriba 1 compromiso o aprendizaje en una tarjeta y la entregue al facilitador a la salida. ¡Un recuerdo valioso! 💌</li>
+            <li><strong>Foto Grupal Final:</strong> (1:52–2:00) como cierre emocional del evento. ¡Sonrisas para el recuerdo! 📸🥳</li>
+        </ul>
+    </div>
+
+    <div class="section-box">
+        <h2><span class="emoji">📋</span> 13. Checklists Imprimibles para el Equipo</h2>
+        <p>¡Asegúrate de que no se escape ningún detalle crucial!</p>
+
+        <h3><span class="emoji">✅</span> Checklist de Preparación (30 a 5 minutos antes del inicio)</h3>
+        <div class="checklist-item"><input type="checkbox" id="prep1"><label for="prep1">Rótulos Diver/Adicc/Perse y flechas de ruta colocados y visibles. 🧭</label></div>
+        <div class="checklist-item"><input type="checkbox" id="prep2"><label for="prep2">Materiales de PAQ-1 listos en cada cubículo y organizados. 📦</label></div>
+        <div class="checklist-item"><input type="checkbox" id="prep3"><label for="prep3">Cronómetros del Timekeeper y facilitadores probados (sonido a volumen medio). ⏰</label></div>
+        <div class="checklist-item"><input type="checkbox" id="prep4"><label for="prep4">Asignación de grupos y brazaletes/tarjetas de identificación listas. 🆔</label></div>
+        <div class="checklist-item"><input type="checkbox" id="prep5"><label for="prep5">Briefing rápido final de señales (mano arriba, campanita, trompeta) con todo el equipo. 🗣️</label></div>
+
+        <h3><span class="emoji">🔄</span> Checklist por Bloque (para el Facilitador de Cubículo)</h3>
+        <div class="checklist-item"><input type="checkbox" id="block1"><label for="block1">Escucho la campanita 🔔 (min. 7) del Timekeeper <span class="rotation-arrow">➔</span> el conferencista introduce la actividad y tomo la palabra. 🎤➡️👨‍🏫</label></div>
+        <div class="checklist-item"><input type="checkbox" id="block2"><label for="block2"><strong>Explico y ejecuto</strong> el PAQ correspondiente (1/2/3) y adapto el contenido a la edad del grupo. 🎯</label></div>
+        <div class="checklist-item"><input type="checkbox" id="block3"><label for="block3">Realizo el cierre de 20-30 segundos con pregunta/refuerzo. ✅</label></div>
+        <div class="checklist-item"><input type="checkbox" id="block4"><label for="block4">Escucho el aviso de transición (min. 11) <span class="rotation-arrow">➔</span> organizo la fila por color para la siguiente rotación. ➡️🚶‍♀️</label></div>
+
+        <h3><span class="emoji">🏁</span> Checklist de Cierre del Evento (últimos 8 minutos)</h3>
+        <div class="checklist-item"><input type="checkbox" id="close1"><label for="close1">Recojo tarjetas/hojas de "salida" de los niños. 📤</label></div>
+        <div class="checklist-item"><input type="checkbox" id="close2"><label for="close2">Recuento básico de niños por grupo (si es necesario para la salida). 🔢</label></div>
+        <div class="checklist-item"><input type="checkbox" id="close3"><label for="close3">Entrego tarjetas/hojas de "salida" al Coordinador General. 🤝</label></div>
+        <div class="checklist-item"><input type="checkbox" id="close4"><label for="close4">Aseguro la foto final de grupo y una despedida animada. 📸👋</label></div>
+    </div>
+
+    <p style="text-align: center; margin-top: 40px; color: #7f8c8d; font-size: 1.1em;">¡Gracias por tu dedicación y esfuerzo! Con este plan, el éxito está asegurado y los niños tendrán una experiencia inolvidable. ✨😊</p>
 
     <script>
-      // === SCRIPT PARA CAMBIO DE TEMAS DE COLOR ===
-      // Función para cambiar entre las tres variaciones de color disponibles
-      // Establecer tema2 como predeterminado al cargar la página
-      document.body.classList.add('theme2');
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Interactive Checklists
+            const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                const parentItem = checkbox.closest('.checklist-item');
+                if (parentItem) {
+                    // Initialize state from local storage or set based on default
+                    if (localStorage.getItem(checkbox.id) === 'checked') {
+                        checkbox.checked = true;
+                        parentItem.classList.add('checked');
+                    }
 
-      document.querySelectorAll('.color-option').forEach((option) => {
-        option.addEventListener('click', function () {
-          document.body.className = '';
-          if (this.classList.contains('option2')) {
-            document.body.classList.add('theme2');
-          } else if (this.classList.contains('option3')) {
-            document.body.classList.add('theme3');
-          }
-        });
+                    checkbox.addEventListener('change', () => {
+                        if (checkbox.checked) {
+                            parentItem.classList.add('checked');
+                            localStorage.setItem(checkbox.id, 'checked');
+                        } else {
+                            parentItem.classList.remove('checked');
+                            localStorage.removeItem(checkbox.id);
+                        }
+                    });
+                }
+            });
 
-        // Añadir soporte para navegación por teclado
-        option.addEventListener('keydown', function(e) {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            this.click();
-          }
+            // 2. Collapsible Sections for Activities
+            const collapsibleToggles = document.querySelectorAll('.collapsible-toggle');
+            collapsibleToggles.forEach(toggle => {
+                const content = toggle.nextElementSibling; // The div.collapsible-content
+                const toggleIcon = toggle.querySelector('.toggle-icon');
+
+                // Initialize: if not active, collapse. If active, set max-height
+                if (!content.classList.contains('active')) {
+                    content.style.maxHeight = '0';
+                    toggleIcon.textContent = '▶';
+                } else {
+                     content.style.maxHeight = content.scrollHeight + "px";
+                     toggleIcon.textContent = '▼';
+                }
+
+                toggle.addEventListener('click', () => {
+                    content.classList.toggle('active');
+                    if (content.classList.contains('active')) {
+                        content.style.maxHeight = content.scrollHeight + "px"; // Expand to full height
+                        toggleIcon.textContent = '▼';
+                    } else {
+                        content.style.maxHeight = '0'; // Collapse
+                        toggleIcon.textContent = '▶';
+                    }
+                });
+            });
+
+            // 3. Group Path Highlighting (Basic - highlights cells in the main table)
+            const groupLabels = document.querySelectorAll('.group-A[data-group-id], .group-B[data-group-id], .group-C[data-group-id]');
+            const itineraryTable = document.getElementById('itinerary-table');
+            const groupColors = {
+                'A': '28, 167, 69', // RGB for --group-A-color
+                'B': '0, 123, 255', // RGB for --group-B-color
+                'C': '253, 126, 20'  // RGB for --group-C-color
+            };
+
+            groupLabels.forEach(label => {
+                const groupId = label.dataset.groupId;
+                label.addEventListener('mouseenter', () => {
+                    itineraryTable.style.setProperty('--highlight-rgb', groupColors[groupId]);
+                    const cellsToHighlight = itineraryTable.querySelectorAll(`td[data-group-loc="${groupId}"]`);
+                    cellsToHighlight.forEach(cell => {
+                        cell.classList.add('path-highlight');
+                    });
+                });
+
+                label.addEventListener('mouseleave', () => {
+                    const cellsToHighlight = itineraryTable.querySelectorAll(`td[data-group-loc="${groupId}"]`);
+                    cellsToHighlight.forEach(cell => {
+                        cell.classList.remove('path-highlight');
+                    });
+                });
+            });
         });
-      });
     </script>
-  </body>
+</body>
 </html>
